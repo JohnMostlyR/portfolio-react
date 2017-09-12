@@ -1,0 +1,85 @@
+///*------------------------------------*\
+//    # PROJECT
+//\*------------------------------------*/
+
+/**
+ * Styling for each project item.
+ */
+.c-portfolio-project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.c-portfolio-project__text-block {
+  align-self: flex-start;
+  flex: 0 1 50vmin;
+  margin-left: 3vmin;
+
+  > p {
+    @include jm-typography('great-primer');
+  }
+}
+
+.c-portfolio-project-header__title {
+  @include jm-typography('double-pica');
+  flex: 1;
+  font-family: Consolas, Monaco, "Andale Mono", monospace !important;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+}
+
+.c-portfolio-project-header__sub-title {
+  @include jm-typography('pica');
+  margin-top: .25em;
+}
+
+.c-portfolio-project-header__description {
+  @include jm-typography('long-primer');
+  display: inline-block;
+}
+
+.c-portfolio-project-description {
+  min-width: 32vw;
+  margin-top: .5em;
+}
+
+.c-portfolio-project-links-list {
+  height: 1.5em;
+  text-align: right;
+}
+
+.c-portfolio-project-links-list__item {
+  margin-right: 1vw;
+  transition: transform .2s ease-in-out;
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.c-portfolio-project-links-list__link {
+  @include jm-typography('double-pica');
+  color: #fff;
+}
+
+.c-portfolio-project__body {
+  flex: 1 0 50%;
+  padding-bottom: 2vw;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  padding-top: 3vw;
+
+  @include mq($from: u-bp-m) {
+    padding-bottom: 1vw;
+    padding-left: 3vw;
+    padding-top: 1vw;
+  }
+}
+
+.l-portfolio-project-header__title {
+  display: flex;
+  width: 100%;
+}

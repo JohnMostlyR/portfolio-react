@@ -1,0 +1,33 @@
+///*------------------------------------*\
+//    # SKILLS
+//\*------------------------------------*/
+
+/**
+ * Skills page layout.
+ */
+.c-portfolio-skills {
+  flex-wrap: wrap;
+}
+
+.c-portfolio-skills__text-balloon {
+  @include base-font-regular;
+}
+
+.c-portfolio-skills__text-block {
+  align-self: flex-start;
+  flex: 0 1 50vmin;
+  margin-left: 3vmin;
+
+  > p {
+    @include jm-typography('great-primer');
+  }
+}
+
+.c-portfolio-skills__header {
+  width: 100%;
+  z-index: 9;
+}
+
+.l-portfolio-skills__text-balloon {
+  max-width: 35vw;
+}

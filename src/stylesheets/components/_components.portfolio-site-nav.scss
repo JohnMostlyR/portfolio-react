@@ -1,0 +1,145 @@
+///*------------------------------------*\
+//    # PORTFOLIO SITE NAVIGATION
+//\*------------------------------------*/
+
+/**
+ * Site wide navigation menu
+ */
+.c-portfolio-site-nav {
+  padding: 1vh 0;
+  background-color: $portfolio-page-header-primary-bg-color;
+
+  @include mq($from: u-bp-m) {
+    left: 100%;
+    position: absolute;
+    top: 77px;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    background-color: transparent;
+    border-bottom: none;
+  }
+}
+
+.c-portfolio-site-nav__items {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include mq($from: u-bp-m) {
+    justify-content: flex-start;
+  }
+}
+
+.c-portfolio-site-nav__item {
+  vertical-align: middle;
+
+  @include mq($from: u-bp-m) {
+    margin-top: 2vw;
+  }
+
+  &:not(:first-child) {
+    @include mq($from: u-bp-m) {
+      margin-left: 1vh;
+    }
+  }
+}
+
+.c-portfolio-site-nav__link {
+  @include jm-typography('pica');
+  display: inline-block;
+  position: relative;
+  background-color: #FF6633;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: $jm-spacing-unit;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:active,
+  &:hover {
+    background-color: transparent;
+    color: #FF6633;
+
+    &::before {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  &::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    border: 1px solid #FF6633;
+    border-radius: inherit;
+    opacity: 0;
+    transform: scale3d(0.6, 0.6, 1);
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+
+    @include mq($from: u-bp-m) {
+      border: 2px solid #FF6633;
+      border-radius: 5px;
+    }
+  }
+
+  @include mq($from: u-bp-m) {
+    border-radius: 5px;
+    width: 7rem; // For IE and Edge who don't support the max-content prop.
+    width: max-content;
+  }
+}
+
+.c-portfolio-site-nav__description {
+  @include mq($from: u-bp-m) {
+    margin-left: .5rem;
+  }
+
+  @media all and (orientation: landscape) and (min-width: 37.5em) {
+    display: none;
+  }
+
+  @media all and (orientation: landscape) and (min-height: 37.5em) {
+    display: inline;
+  }
+}
+
+/**
+ * 1. Fixes problem for the Chrome browser where the scale-hover-effect on a social link causes this icon to jump
+ *    position. It does however make the icon appear blurry.
+ *
+ */
+.c-portfolio-site-nav__icon {
+  display: none !important;
+  //-webkit-backface-visibility: hidden; /* [1] */
+
+  @include mq($from: u-bp-m) {
+    display: inherit !important;
+    transform: rotate(-90deg);
+    margin: 0;
+  }
+}
+
+a[href="#contact"] {
+  transition: transform .3s;
+}
+
+
+// Modifiers
+.c-portfolio-site-nav__link.is-active {
+  background-color: transparent;
+  color: #FF6633;
+
+  &::before {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}

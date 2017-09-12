@@ -1,0 +1,43 @@
+///*------------------------------------*\
+//    # MEDIA ASSET
+//\*------------------------------------*/
+
+/**
+ * Media asset styling
+ */
+.c-portfolio-media-asset {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  border-radius: .5rem;
+
+  &::before {
+    height: 0;
+    position: absolute;
+    width: 0;
+    content: "";
+  }
+
+  @include mq($from: u-bp-m) {
+    width: auto;
+  }
+}
+
+.c-portfolio-media-asset__body {
+  padding: 1vw;
+}
+
+.c-portfolio-media-asset__image {
+  width: 13.75rem;
+  border-radius: .5rem;
+
+  > img {
+    border-radius: .5rem;
+  }
+}
+
+.c-portfolio-media-asset__caption {
+
+}
