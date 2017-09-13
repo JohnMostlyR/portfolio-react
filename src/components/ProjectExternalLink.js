@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProjectExternalLink = (props) => (
-  <li className="c-portfolio-project-links-list__item">
+  <li className="c-portfolio-project-links-list__item" data-tip={props.link.name}>
     <a
       className="c-portfolio-project-links-list__link"
       href={props.link.url}

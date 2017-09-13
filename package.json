@@ -43,6 +43,7 @@
     "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.10",
     "react-router-dom": "^4.1.2",
+    "react-tooltip": "^3.3.0",
     "sass-mq": "^3.3.2",
     "scrolling-element": "^1.0.2",
     "snapsvg": "^0.5.1",

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 
 import SiteHeader from './components/SiteHeader';
 import IntroPage from './components/IntroPage';
@@ -23,6 +24,7 @@ class App extends Component {
             <Redirect to='/intro'/>
           )}/>
         </main>
+        <ReactTooltip />
       </div>
     );
   }

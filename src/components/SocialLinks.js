@@ -56,7 +56,7 @@ class SocialLinks extends Component {
         <ul className="c-portfolio-social__items" ref='items'>
           {
             externalLinks.map((externalLink, idx) => (
-              <li className="c-portfolio-social__item" key={idx}>
+              <li className="c-portfolio-social__item" key={idx} data-tip={externalLink.name}>
                 <a className="c-portfolio-social__lnk" href={externalLink.url} target="_blank"
                    rel="noopener noreferrer">
                   <span className={externalLink.icon} aria-hidden="true"/><span
