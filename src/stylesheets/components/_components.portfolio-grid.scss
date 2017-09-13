@@ -33,7 +33,7 @@
 }
 
 .c-portfolio-grid__section:not([data-intro]) {
-  @include mq($from: u-bp-xxl) {
+  @media (min-width: 1920px) {
     padding-left: 17vw;
     padding-right: 17vw;
   }

@@ -154,7 +154,7 @@ $portfolio-projects-project-margin-for-nav: 10vw;
   }
 }
 
-@include mq($from: u-bp-xxl) {
+@media (min-width: 1920px) {
   .l-portfolio-projects__col--left {
     display: none;
   }
