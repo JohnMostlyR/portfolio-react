@@ -1,7 +1,30 @@
 import React, {Component} from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
+import styled from 'styled-components';
 import FormInput from './FormInput';
+import SendButton from './SendButton';
+
+const Form = styled.form`
+  flex: 0 1 25rem;
+  z-index: 1;
+  background-color: orange;
+  border-radius: .5rem;
+  color: #222;
+  padding: .5rem;
+`;
+
+const FormInfo = styled.div`
+  padding-bottom: 1rem;
+`;
+
+const FormInfoItemsList = styled.ul`
+  list-style: none;
+`;
+
+const FormFooter = styled.div`
+  text-align: center;
+`;
 
 class ContactForm extends Component {
   state = {
@@ -110,49 +133,24 @@ class ContactForm extends Component {
   render() {
     const renderSendButton = () => {
       return {
-        IDLE: <button
-          className="c-portfolio-form__button"
-          disabled={this.validateForm()}>
-          <span><span
-            className="fa fa-paper-plane c-portfolio-form__button-icon"
-            aria-hidden="true"></span> Send</span>
-        </button>,
-        SENDING: <button
-          className="c-portfolio-form__button"
-          disabled>
-          <span><span
-            className="fa fa-paper-plane c-portfolio-form__button-icon"
-            aria-hidden="true"></span> Sending...</span>
-        </button>,
-        SUCCESS: <button
-          className="c-portfolio-form__button"
-          disabled>
-          <span><span
-            className="fa fa-check c-portfolio-form__button-icon"
-            aria-hidden="true"></span> Sent!</span>
-        </button>,
-        ERROR: <button
-          className="c-portfolio-form__button"
-          disabled={this.validateForm()}>
-          <span><span
-            className="fa fa-frown-o c-portfolio-form__button-icon"
-            aria-hidden="true"></span> Failed. Please try again</span>
-        </button>,
+        IDLE: <SendButton text="Send" disabled={this.validateForm()} />,
+        SENDING: <SendButton text="Sending..." disabled={true}/>,
+        SUCCESS: <SendButton text="Sent! I'll respond as soon as possible." disabled={true}/>,
+        ERROR: <SendButton text="Failed. Please try again" disabled={this.validateForm()} />,
       }[this.state._sendStatus];
     };
 
     return (
-      <form id="js-portfolio-form" className="c-portfolio-form" name="contact-form" action="#"
+      <Form id="js-portfolio-form" name="contact-form" action="#"
             acceptCharset="utf-8" method="post" onSubmit={this.onFormSubmit}>
-        <div className="c-portfolio-form__frame">
-          <div className="c-portfolio-form__content">
-            <div className="c-portfolio-form__info">
-              <ul className="c-portfolio-form__info-list">
-                <li><span className="fa fa-info-circle" aria-hidden="true"/> Please fill in all fields
-                </li>
-              </ul>
-            </div>
-            <div className="c-portfolio-form__body">
+        <div>
+          <div>
+            <FormInfo>
+              <FormInfoItemsList>
+                <li><span className="fa fa-info-circle" aria-hidden="true"/> Please fill in all fields</li>
+              </FormInfoItemsList>
+            </FormInfo>
+            <div>
               <FormInput
                 helperText="Please provide a subject for your message."
                 label="Subject"
@@ -196,14 +194,14 @@ class ContactForm extends Component {
                 value={this.state.field.email}
               />
             </div>
-            <div className="c-portfolio-form__footer">
+            <FormFooter>
               {
                 renderSendButton()
               }
-            </div>
+            </FormFooter>
           </div>
         </div>
-      </form>
+      </Form>
     );
   }
 }

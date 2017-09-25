@@ -1,7 +1,42 @@
 import React, {Component} from 'react';
 import Snap from 'snapsvg';
+import styled from 'styled-components';
+import InvisibleH2 from '../components/InvisibleH2';
+import mq from '../helpers/styles/templates/mediaQueries';
+import {svgToURL} from '../helpers/styles/tools';
 
 import MyPicture from '../images/itsme-trevi-rome.jpg';
+
+const IntroPageSection = styled.header`
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url(${svgToURL('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.5 196.3" preserveAspectRatio="xMaxYMid"><path fill="#AEE8FC" d="M41.88 103.97h16.64L50.2 89.55l-8.32-14.41-8.33 14.41-8.32 14.42z"/><path fill="#54D2FE" d="M11.44 56.67h11.44l-5.72-9.91-5.72-9.91-5.72 9.91L0 56.67z"/><path fill="#C9F0C4" d="M42.98 49.07h8.91l-4.46-7.72-4.45-7.71-4.45 7.71-4.46 7.72z"/><path fill="#D3EE32" d="M31.2 11.77h6.79l-3.4-5.88L31.2 0l-3.4 5.89-3.4 5.88z"/><path fill="#5DD2F9" d="M47.83 153.64H59.5l-5.83-10.11-5.84-10.11L42 143.53l-5.84 10.11z"/><path fill="#C8F1FD" d="M33.72 196.3h4.63l-2.32-4.02-2.31-4.01-2.32 4.01-2.32 4.02z"/></svg>')});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 100% 50%;
+
+  ${mq.m`padding-right: 10vw; // Keep room for site navigation`}
+
+  @media (min-height: 424px) {
+    align-items: center;
+  }
+`;
+
+const IntroHeader = styled.header`
+  height: 100%;
+  width: 100vmin;
+  z-index: 9;
+`;
+
+const SpeechBubble = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+`;
 
 class IntroPage extends Component {
   animateSvg = () => {
@@ -144,11 +179,12 @@ class IntroPage extends Component {
 
   render() {
     return (
-      <section id="intro" className="c-portfolio-grid__section c-portfolio-intro" data-intro={true}>
-        <header className="c-portfolio-intro__header">
-          <h2 className="u-visually-hidden">INTRO</h2>
-          <div className="l-portfolio-intro__text-balloon" ref={d=>this.svgDiv=d}>
-            <svg id="js-svg-intro-balloon" width="100%" height="100%" viewBox="0 365.1 595.3 425.3" preserveAspectRatio="xMinYMid">
+      <IntroPageSection id="intro" isIntro={true}>
+        <IntroHeader>
+          <InvisibleH2>INTRO</InvisibleH2>
+          <SpeechBubble innerRef={d => this.svgDiv = d}>
+            <svg id="js-svg-intro-balloon" width="100%" height="100%" viewBox="0 365.1 595.3 425.3"
+                 preserveAspectRatio="xMinYMid">
               <g id="g1">
                 <path id="p1" fill="#212120" d="M-754.1,133.2v140.3l78.7,153.1h80.3L-754.1,133.2z"/>
                 <path id="p2" fill="#818180" d="M159,733.2 v0 H78.700002 78.7z"/>
@@ -174,9 +210,9 @@ class IntroPage extends Component {
                     y="580">FRONT-END DEVELOPER
               </text>
             </svg>
-          </div>
-        </header>
-      </section>
+          </SpeechBubble>
+        </IntroHeader>
+      </IntroPageSection>
     );
   }
 }

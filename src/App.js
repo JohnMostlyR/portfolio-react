@@ -1,20 +1,29 @@
 import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
+import styled from 'styled-components';
 
-import SiteHeader from './components/SiteHeader';
-import IntroPage from './components/IntroPage';
-import AboutPage from './components/AboutPage';
-import SkillsPage from './components/SkillsPage';
-import ProjectsPage from './components/ProjectsPage';
-import ContactPage from './components/ContactPage';
+import Grid from './components/Grid';
+import SiteHeader from './components/SiteHeader/SiteHeader';
+import IntroPage from './pages/IntroPage';
+import AboutPage from './pages/AboutPage';
+import SkillsPage from './pages/SkillsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ContactPage from './pages/ContactPage';
+
+const StyledMain = styled.main`
+  display: flex;
+  flex: 1;
+  padding: 1vh 0;
+  width: 100%;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="c-portfolio-grid">
+      <Grid>
         <SiteHeader/>
-        <main className="c-portfolio-grid__wrapper">
+        <StyledMain>
           <Route path='/intro' component={IntroPage}/>
           <Route path='/about' component={AboutPage}/>
           <Route path='/skills' component={SkillsPage}/>
@@ -23,9 +32,9 @@ class App extends Component {
           <Route exact path='/' render={() => (
             <Redirect to='/intro'/>
           )}/>
-        </main>
+        </StyledMain>
         <ReactTooltip />
-      </div>
+      </Grid>
     );
   }
 }
