@@ -12,14 +12,10 @@ const ProjectsList = styled.ul`
 `;
 
 const ProjectsListItem = styled.li`
-  margin-top: 1vh;
+  margin-top: 2vh;
   position: relative;
   background-color: #F90;
   border-radius: .5rem;
-
-  &:first-child {
-    margin-top: 2vh;
-  }
 
   &:nth-child(odd) {
     background-color: #09F;
