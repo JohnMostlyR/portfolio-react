@@ -12,6 +12,10 @@ const ProjectsWrapper = styled.div`
 
 const Col = styled.div`
   ${mq.m`flex: 1 0 10vw;`}
+  
+  @media (min-width: 1920px) {
+    display: none;
+  }
 `;
 
 class ProjectsPage extends React.Component {

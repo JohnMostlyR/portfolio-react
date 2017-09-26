@@ -5,7 +5,6 @@ import { injectGlobal } from 'styled-components';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './stylesheets/web-fonts.css';
 import 'font-awesome/css/font-awesome.css';
 
 import typography, {baseFontStackSansSerif} from './helpers/styles/templates/typography';

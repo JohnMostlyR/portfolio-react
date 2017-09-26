@@ -197,8 +197,7 @@ class SiteNavigation extends Component {
         return (
           {
             position: 'absolute',
-            top: (this.state.myTopPosition + this.state.topPositionOffset),
-            width: '100%',
+            top: (this.state.myTopPosition + this.state.topPositionOffset + 16),
             zIndex: 10,
           }
         );
