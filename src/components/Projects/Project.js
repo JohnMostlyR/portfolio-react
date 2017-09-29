@@ -44,7 +44,7 @@ const Title = styled.h2`
   ${typography.doublePica}
 `;
 
-const projectLinkslist  = styled.ul`
+const ProjectLinkslist  = styled.ul`
   height: 1.5em;
   margin: 0;
   padding: 0;
@@ -70,11 +70,11 @@ const Project = (props) => {
         <div>
           <TitleWrapper>
             <Title>{props.title}</Title>
-            <projectLinkslist>
+            <ProjectLinkslist>
               {
                 props.links.map(link => <ProjectExternalLink key={link.name} link={link}/>)
               }
-            </projectLinkslist>
+            </ProjectLinkslist>
           </TitleWrapper>
           <DetailsTitle><strong>{props.detailsTitle}</strong></DetailsTitle>
         </div>
