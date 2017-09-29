@@ -110,10 +110,9 @@ module.exports = {
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
       // { parser: { requireEnsure: false } },
-      // Hack for SnapSVG
       {
         test: require.resolve("snapsvg"),
-        loader: 'imports-loader?this=>window,fix=>module.exports=0',
+        loader: 'imports-loader?this=>window,fix=>module.exports=0'
       },
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
@@ -213,7 +212,7 @@ module.exports = {
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
-          // This loader don't uses a "test" so it will catch all modules
+          // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
           {
             loader: require.resolve('file-loader'),
@@ -333,5 +332,6 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
+    child_process: 'empty',
   },
 };
