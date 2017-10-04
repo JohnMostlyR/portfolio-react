@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import typography, {baseFontBold} from '../helpers/styles/templates/typography';
-import {svgToURL} from '../helpers/styles/tools';
+import typography, {baseFontBold} from '../styles/templates/typography';
+import {svgToURL} from '../styles/tools';
 
 const Button = styled.button`
   position: relative;

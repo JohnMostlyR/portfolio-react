@@ -3,8 +3,8 @@ import {NavLink} from 'react-router-dom';
 import {throttle} from 'lodash';
 import 'scrolling-element';
 import styled from 'styled-components';
-import mq from '../../helpers/styles/templates/mediaQueries';
-import typography from '../../helpers/styles/templates/typography';
+import mq from '../../styles/templates/mediaQueries';
+import typography from '../../styles/templates/typography';
 
 const SiteNavigationNav = styled.nav`
   padding: 1vh 0;

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import mq from '../helpers/styles/templates/mediaQueries';
-import typography, {baseFontRegular} from '../helpers/styles/templates/typography';
-import {svgToURL} from '../helpers/styles/tools';
+import mq from '../styles/templates/mediaQueries';
+import typography, {baseFontRegular} from '../styles/templates/typography';
+import {svgToURL} from '../styles/tools';
 
 const InputGroup = styled.div`
   display: flex;

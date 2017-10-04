@@ -2,7 +2,7 @@ import React from 'react';
 import Page from '../components/Page/Page';
 import Projects from '../components/Projects/Projects';
 import styled from 'styled-components';
-import mq from '../helpers/styles/templates/mediaQueries';
+import mq from '../styles/templates/mediaQueries';
 
 const ProjectsWrapper = styled.div`
   display: flex;

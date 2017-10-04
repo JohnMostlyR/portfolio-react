@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {visuallyHidden} from '../helpers/styles/mixins';
+import {visuallyHidden} from '../styles/mixins';
 
 const InvisibleH2 = styled.h2`${visuallyHidden}`;
 

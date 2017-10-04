@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Media from '../MediaObject/Media';
-import typography from '../../helpers/styles/templates/typography';
+import Media from '../MediaObject/index';
+import typography from '../../styles/templates/typography';
 
 import MyLogo from '../../images/my-logo.svg';
 

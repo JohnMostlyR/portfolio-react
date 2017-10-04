@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mq from '../helpers/styles/templates/mediaQueries';
+import mq from '../styles/templates/mediaQueries';
 import ResponsiveImage from './ResponsiveImage';
 
 const Figure = styled.figure`

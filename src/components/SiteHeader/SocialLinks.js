@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import typography from '../../helpers/styles/templates/typography';
-import {visuallyHidden} from '../../helpers/styles/mixins';
+import typography from '../../styles/templates/typography';
+import {visuallyHidden} from '../../styles/mixins';
 
 const SocialLinksAside = styled.aside`
   float: right;

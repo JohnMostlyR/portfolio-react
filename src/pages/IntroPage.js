@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import Snap from 'snapsvg';
 import styled from 'styled-components';
 import InvisibleH2 from '../components/InvisibleH2';
-import mq from '../helpers/styles/templates/mediaQueries';
-import {svgToURL} from '../helpers/styles/tools';
+import mq from '../styles/templates/mediaQueries';
+import {svgToURL} from '../styles/tools';
 
 import MyPicture from '../images/itsme-trevi-rome.jpg';
 

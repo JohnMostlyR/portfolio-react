@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mq from '../../helpers/styles/templates/mediaQueries';
+import mq from '../../styles/templates/mediaQueries';
 
 const PageSection = styled.section`
   align-items: center;

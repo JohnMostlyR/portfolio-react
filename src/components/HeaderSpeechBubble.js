@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {svgToURL} from '../helpers/styles/tools';
+import {svgToURL} from '../styles/tools';
 
 const HeaderSpeechBubble = styled.div`
   position: relative;

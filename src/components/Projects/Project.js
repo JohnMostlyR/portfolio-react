@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import mq from '../../helpers/styles/templates/mediaQueries';
-import typography from '../../helpers/styles/templates/typography';
+import mq from '../../styles/templates/mediaQueries';
+import typography from '../../styles/templates/typography';
 import ProjectExternalLink from './ProjectExternalLink';
 import MediaAsset from '../../components/MediaAsset';
 

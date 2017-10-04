@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {projects} from '../../data/projects';
 import Project from './Project';
-import mq from '../../helpers/styles/templates/mediaQueries';
+import mq from '../../styles/templates/mediaQueries';
 
 const ProjectsList = styled.ul`
   flex: 1 1 100%; // IE

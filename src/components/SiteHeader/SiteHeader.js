@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {clearfix} from '../../helpers/styles/mixins';
+import {clearfix} from '../../styles/mixins';
 import Brand from './Brand';
 import SiteNavigation from './SiteNavigation';
 import SocialLinks from './SocialLinks';

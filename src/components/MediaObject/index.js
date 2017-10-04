@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+
+import MediaWrapper from './MediaWrapper';
 import MediaImage from './MediaImage';
 import MediaBody from './MediaBody';
-
-const MediaWrapper = styled.div`
-  display: flex;
-  margin-bottom: ${props => props.spacing || 0};
-`;
 
 const Media = (props) => (
   <MediaWrapper>

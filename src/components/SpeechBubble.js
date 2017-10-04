@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {svgToURL} from '../helpers/styles/tools';
-import mq from '../helpers/styles/templates/mediaQueries';
-import typography from '../helpers/styles/templates/typography';
+import {svgToURL} from '../styles/tools';
+import mq from '../styles/templates/mediaQueries';
+import typography from '../styles/templates/typography';
 
 const Wrapper = styled.div`
   margin-bottom: 9vh;
