@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from '../components/Page/Page';
-import Projects from '../components/Projects/Projects';
+import Projects from '../components/Projects/index';
 import styled from 'styled-components';
 import mq from '../styles/templates/mediaQueries';
 

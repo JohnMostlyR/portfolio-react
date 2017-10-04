@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import typography from '../../styles/templates/typography';
 import {visuallyHidden} from '../../styles/mixins';
@@ -24,15 +25,26 @@ const LinkDescription = styled.span`
 `;
 
 const ProjectExternalLink = (props) => (
-  <ListItem data-tip={props.link.name}>
+  <ListItem data-tip={props.name}>
     <Link
-      href={props.link.url}
+      href={props.url}
       target="_blank"
       rel="noopener noreferrer">
-      <span className={props.link.icon} aria-hidden="true"/>
-      <LinkDescription>{props.link.name}</LinkDescription>
+      <span className={props.icon} aria-hidden="true"/>
+      <LinkDescription>{props.name}</LinkDescription>
     </Link>
   </ListItem>
 );
+
+ProjectExternalLink.propTypes = {
+  icon: PropTypes.string,
+  name: PropTypes.string,
+  url: PropTypes.string,
+};
+
+ProjectExternalLink.defaultPropTypes = {
+  name: 'Name',
+  url: '#',
+};
 
 export default ProjectExternalLink;

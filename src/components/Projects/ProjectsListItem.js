@@ -1,15 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {projects} from '../../data/projects';
-import Project from './Project';
 import mq from '../../styles/templates/mediaQueries';
-
-const ProjectsList = styled.ul`
-  flex: 1 1 100%; // IE
-  margin: 0 auto; // fallback for no flexbox
-  list-style: none;
-  padding-bottom: 9vmin;
-`;
 
 const ProjectsListItem = styled.li`
   margin-top: 2vh;
@@ -62,25 +52,4 @@ const ProjectsListItem = styled.li`
   }
 `;
 
-const Projects = () => {
-  return (
-    <ProjectsList>
-      {
-        projects.map((project, idx) => (
-          <ProjectsListItem key={idx}>
-            <Project
-              thumbnailUrl={project.thumbnailUrl}
-              title={project.title}
-              links={project.links}
-              detailsTitle={project.details.title}
-              detailsBodyText={project.details.bodyText}
-              isOdd={!(idx % 2)}
-            />
-          </ProjectsListItem>
-        ))
-      }
-    </ProjectsList>
-  );
-};
-
-export default Projects;
+export default ProjectsListItem;
