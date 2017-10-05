@@ -6,7 +6,7 @@ const sizes = {
   m: 600,
   l: 900,
   xl: 1008,
-  xxl: 1280
+  xxl: 1280,
 };
 
 const mq = Object.keys(sizes).reduce((acc, label) => {

@@ -5,7 +5,7 @@ function svgToURL(svg) {
   let svgURL = svg.replace(/["%#}{><]/g, (match) => {
     switch (match) {
       case '"':
-        return "'";
+        return '\'';
       case '%':
         return '%25';
       case '#':
@@ -27,7 +27,7 @@ function svgToURL(svg) {
 }
 
 const SVGBackgroundImage = (svg) => {
-  return css`background-image: url(${svgToURL(svg)});`
+  return css`background-image: url(${svgToURL(svg)});`;
 };
 
 export {svgToURL, SVGBackgroundImage};

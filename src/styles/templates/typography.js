@@ -1,5 +1,5 @@
 export const baseFontStackSansSerif = `
-  ${
+${
   [
     '"Segoe UI"',
     'Roboto',
@@ -8,13 +8,13 @@ export const baseFontStackSansSerif = `
     'Helvetica',
     'Arial',
     'freesans',
-    'sans-serif'
+    'sans-serif',
   ].join(',')
-  };
+};
 `;
 
 export const baseFontStackSerif = `
-  ${
+${
   [
     '"Roboto Slab"',
     '"Droid Serif"',
@@ -22,9 +22,9 @@ export const baseFontStackSerif = `
     'Georgia',
     '"Times New Roman"',
     'Times',
-    'serif'
+    'serif',
   ].join(',')
-  };
+};
 `;
 
 export const baseFontRegular = `
@@ -74,7 +74,7 @@ const sizes = {
     groupD: {
       fontSize: 140,
       lineHeight: 148,
-    }
+    },
   },
   elephant: {
     groupA: {
@@ -92,7 +92,7 @@ const sizes = {
     groupD: {
       fontSize: 116,
       lineHeight: 124,
-    }
+    },
   },
   imperial: {
     groupA: {
@@ -110,7 +110,7 @@ const sizes = {
     groupD: {
       fontSize: 96,
       lineHeight: 104,
-    }
+    },
   },
   royal: {
     groupA: {
@@ -128,7 +128,7 @@ const sizes = {
     groupD: {
       fontSize: 76,
       lineHeight: 84,
-    }
+    },
   },
   foolscap: {
     groupA: {
@@ -146,7 +146,7 @@ const sizes = {
     groupD: {
       fontSize: 56,
       lineHeight: 60,
-    }
+    },
   },
   canon: {
     groupA: {
@@ -200,7 +200,7 @@ const sizes = {
     groupD: {
       fontSize: 28,
       lineHeight: 32,
-    }
+    },
   },
   doublePica: {
     groupA: {
@@ -218,7 +218,7 @@ const sizes = {
     groupD: {
       fontSize: 24,
       lineHeight: 28,
-    }
+    },
   },
   greatPrimer: {
     groupA: {
@@ -236,7 +236,7 @@ const sizes = {
     groupD: {
       fontSize: 20,
       lineHeight: 24,
-    }
+    },
   },
   bodyCopy: {
     groupA: {
@@ -254,7 +254,7 @@ const sizes = {
     groupD: {
       fontSize: 16,
       lineHeight: 22,
-    }
+    },
   },
   pica: {
     groupA: {
@@ -272,7 +272,7 @@ const sizes = {
     groupD: {
       fontSize: 16,
       lineHeight: 20,
-    }
+    },
   },
   longPrimer: {
     groupA: {
@@ -290,7 +290,7 @@ const sizes = {
     groupD: {
       fontSize: 14,
       lineHeight: 18,
-    }
+    },
   },
   brevier: {
     groupA: {
@@ -308,7 +308,7 @@ const sizes = {
     groupD: {
       fontSize: 13,
       lineHeight: 16,
-    }
+    },
   },
   minion: {
     groupA: {
@@ -326,15 +326,13 @@ const sizes = {
     groupD: {
       fontSize: 12,
       lineHeight: 16,
-    }
+    },
   },
 };
 
 const typography =
-  Object
-    .keys(sizes)
-    .reduce((acc, label) => {
-      acc[label] = `
+  Object.keys(sizes).reduce((acc, label) => {
+    acc[label] = `
         font-size: ${sizes[label].groupA.fontSize / 16}rem;
         line-height: ${sizes[label].groupA.lineHeight / 16}rem;
 
@@ -349,7 +347,7 @@ const typography =
         }
       `;
 
-      return acc;
-    }, {});
+    return acc;
+  }, {});
 
 export {typography as default};
