@@ -17,9 +17,9 @@ const UL = styled.ul`
 
 const pages = [
   {
-    description: 'Intro',
+    description: 'Home',
     icon: 'fa fa-home fa-fw',
-    navigateTo: 'intro',
+    navigateTo: 'home',
   },
   {
     description: 'About',

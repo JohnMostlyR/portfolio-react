@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {throttle} from 'lodash';
-import 'scrolling-element';
+// import 'scrolling-element';
 import styled from 'styled-components';
 import mq from '../../styles/templates/mediaQueries';
 

@@ -1,33 +1,25 @@
-import React, {Component} from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import React from 'react';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
+import routes from './routes';
 import Wrapper from './components/Wrapper';
 import Main from './components/Main';
 import SiteHeader from './components/SiteHeader/index';
-import IntroPage from './pages/index';
-import AboutPage from './pages/about';
-import SkillsPage from './pages/skills';
-import ProjectsPage from './pages/projects';
-import ContactPage from './pages/contact';
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
       <Wrapper>
         <SiteHeader/>
         <Main>
-          <Route path='/intro' component={IntroPage}/>
-          <Route path='/about' component={AboutPage}/>
-          <Route path='/skills' component={SkillsPage}/>
-          <Route path='/projects' component={ProjectsPage}/>
-          <Route path='/contact' component={ContactPage}/>
-          <Route exact path='/' render={() => (
-            <Redirect to='/intro'/>
-          )}/>
+          <Switch>
+            {routes.map((route, idx) => <Route key={idx} {...route} />)}
+            <Route exact path='/' render={() => (
+              <Redirect to='/home'/>
+            )}/>
+          </Switch>
         </Main>
       </Wrapper>
-    );
-  }
-}
+  );
+};
 
 export default App;
