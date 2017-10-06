@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from '../Layouts';
+import Layout from '../layouts';
 import ContactForm from '../components/ContactForm';
 import SpeechBubble from '../components/SpeechBubble/index';
 

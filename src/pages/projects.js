@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../Layouts';
+import Layout from '../layouts';
 import Projects from '../components/Projects/index';
 import styled from 'styled-components';
 import mq from '../styles/templates/mediaQueries';
