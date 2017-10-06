@@ -56,7 +56,6 @@ const SpeechBubble = (props) => (
 );
 
 SpeechBubble.propTypes = {
-  children: PropTypes.object,
   isLeftHanded: PropTypes.bool,
 };
 
