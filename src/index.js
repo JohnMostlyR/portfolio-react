@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.css';
 
 import './styles/global-styles';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Router>
     <App />
   </Router>,

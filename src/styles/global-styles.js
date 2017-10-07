@@ -1,6 +1,7 @@
 import {injectGlobal} from 'styled-components';
 import typography, {baseFontStackSansSerif} from './templates/typography';
 
+// eslint-disable-next-line
 injectGlobal`
   html {
     box-sizing: border-box;
@@ -94,5 +95,9 @@ injectGlobal`
   h6 {
     ${typography.brevier}
     font-weight: 700;
+  }
+  
+  .pf-loading-overlay {
+    display: none;
   }
 `;

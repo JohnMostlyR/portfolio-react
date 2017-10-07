@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
-import {throttle} from 'lodash';
-// import 'scrolling-element';
 import styled from 'styled-components';
 import mq from '../../styles/templates/mediaQueries';
 
 import List from './List';
 
 const SiteNavigationNav = styled.nav`
+  width: 100%;
   padding: 1vh 0;
   background-color: #575756;
+  opacity: 1;
+  transition: opacity .2s ease-out;
 
   ${mq.m`
     left: 100%;
     position: absolute;
     top: 77px;
+    width: unset;
     transform: rotate(90deg);
     transform-origin: top left;
     background-color: transparent;
@@ -25,6 +27,7 @@ class SiteNavigation extends Component {
   state = {
     myTopPosition: 0,
     topPositionOffset: 0,
+    isScrolling: false,
   };
 
   _getElementTop = (element) => {
@@ -40,18 +43,33 @@ class SiteNavigation extends Component {
   };
 
   handleScrollEvent = (ev) => {
-    let delta = (this.state.myTopPosition - ev.target.scrollingElement.scrollTop);
-    if (delta <= 0) {
-      this.setState({topPositionOffset: Math.abs(delta)});
-    } else {
-      this.setState({topPositionOffset: 0});
+    if (this.state.isScrolling) {
+      return;
     }
+
+    let topPositionOffset = 0;
+    let debounce = setTimeout(() => {
+      let delta = (this.state.myTopPosition - ev.target.scrollingElement.scrollTop);
+
+      if (delta <= 0) {
+        topPositionOffset =  Math.abs(delta);
+      }
+
+      this.setState({
+        topPositionOffset,
+        isScrolling: 0,
+      });
+    }, 250);
+
+    this.setState({
+      isScrolling: debounce,
+    });
   };
 
   componentDidMount() {
     const myTopPosition = this._getElementTop(this.siteNavigation);
     this.setState({myTopPosition});
-    document.addEventListener('scroll', throttle(this.handleScrollEvent, 2));
+    document.addEventListener('scroll', this.handleScrollEvent);
   }
 
   componentWillUnmount() {
@@ -62,21 +80,26 @@ class SiteNavigation extends Component {
     const setStyle = () => {
       if (this.state.topPositionOffset) {
         return (
-          {
-            position: 'absolute',
-            top: (this.state.myTopPosition + this.state.topPositionOffset + 16),
-            zIndex: 10,
-          }
+            {
+              position: 'absolute',
+              top: (this.state.myTopPosition + this.state.topPositionOffset),
+              zIndex: 10,
+              opacity: (this.state.isScrolling ? 0 : 1),
+            }
         );
       } else {
-        return ({});
+        return (
+            {
+              opacity: 1,
+            }
+        );
       }
     };
 
     return (
-      <SiteNavigationNav style={setStyle()} innerRef={el => this.siteNavigation = el}>
-        <List/>
-      </SiteNavigationNav>
+        <SiteNavigationNav style={setStyle()} innerRef={el => this.siteNavigation = el}>
+          <List/>
+        </SiteNavigationNav>
     );
   }
 }

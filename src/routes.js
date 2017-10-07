@@ -25,6 +25,11 @@ const routes = [
     path: '/contact',
     component: ContactPage,
   },
+  // {
+  //   path: '/',
+  //   exact: true,
+  //   component: HomePage,
+  // },
 ];
 
 export default routes;
