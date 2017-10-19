@@ -1,5 +1,20 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {svgToURL} from '../styles/tools';
+
+import {svgToURL} from '../../styles/tools';
+import typography from '../../styles/templates/typography';
+
+const StyledHeader = styled.header`
+  float: left;
+  padding-left: 1em;
+`;
+
+const H2 = styled.h2`
+  color: #95C11F;
+  ${typography.doublePica}
+  font-weight: 700;
+`;
 
 const HeaderSpeechBubble = styled.div`
   position: relative;
@@ -35,4 +50,20 @@ const HeaderSpeechBubble = styled.div`
   }
 `;
 
-export default HeaderSpeechBubble;
+const PageHeader = (props) => (
+    <StyledHeader>
+      <HeaderSpeechBubble isLeftHanded={props.isLeftHanded}>
+        <H2>{props.children}</H2>
+      </HeaderSpeechBubble>
+    </StyledHeader>
+);
+
+PageHeader.propTypes = {
+  isLeftHanded: PropTypes.bool,
+};
+
+PageHeader.defaultProps = {
+  isLeftHanded: true,
+};
+
+export default PageHeader;

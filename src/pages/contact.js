@@ -1,19 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Layout from '../layouts';
+import {FormattedMessage} from 'react-intl';
+import {Row, Column} from 'hedron';
+
+import StyledSection from '../components/StyledSection';
+import SpeechBubble from '../components/SpeechBubble';
+import PageHeader from '../components/PageHeader';
 import ContactForm from '../components/ContactForm';
-import SpeechBubble from '../components/SpeechBubble/index';
 
-const ContactPage = (props) => (
-  <Layout pageTitle="CONTACT ME">
-    <SpeechBubble isLeftHanded={props.isLeftHanded}>
-      <ContactForm/>
-    </SpeechBubble>
-  </Layout>
-);
-
-ContactPage.propTypes = {
-  isLeftHanded: PropTypes.bool,
-};
-
-export default ContactPage;
+export default ((props) => (
+    <StyledSection>
+      <Row tagName={'div'}>
+        <Column>
+          <PageHeader isLeftHanded>
+            <FormattedMessage id={'portfolio.page.contact.title'}
+                              defaultMessage={'CONTACT ME'}/>
+          </PageHeader>
+        </Column>
+      </Row>
+      <Row tagName={'div'}>
+        <Column>
+          <SpeechBubble>
+            <ContactForm/>
+          </SpeechBubble>
+        </Column>
+      </Row>
+    </StyledSection>
+));

@@ -1,26 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {rem} from 'polished';
 import {svgToURL} from '../../styles/tools';
 import mq from '../../styles/templates/mediaQueries';
-import typography from '../../styles/templates/typography';
-
-const Wrapper = styled.div`
-  margin-bottom: 9vh;
-  padding: 1vh 1vw;
-  width: 100%;
-  ${typography.greatPrimer};
-
-  ${mq.xl`flex: 0 1 1008px;`}
-`;
+import typography, {baseFontStackSerif} from '../../styles/templates/typography';
 
 const Bubble = styled.div`
   position: relative;
   background-color: #F90;
   border-radius: .5rem;
+  font-family: ${baseFontStackSerif}
   padding: .5em;
 
-  @media (min-height: 750px) {
+  @media (min-height: ${rem('750px')} {
     margin-right: 0;
     border-bottom-left-radius: ${props => (props.isLeftHanded) ? 0 : '.5rem'};
     border-bottom-right-radius: ${props => (props.isLeftHanded) ? '.5rem' : 0};
@@ -39,8 +32,17 @@ const Bubble = styled.div`
       background-position: left top;
     }
   }
+`;
 
-  > p {
+const Wrapper = styled.div`
+  margin-bottom: 9vh;
+  padding: 1vh 1vw;
+  width: 100%;
+  ${typography.doublePica};
+
+  ${mq.xl`max-width: ${rem('1008px')};`}
+
+  ${Bubble} p {
     &:not(:first-child) {
       margin-top: 1.5rem;
     }
@@ -48,11 +50,11 @@ const Bubble = styled.div`
 `;
 
 const SpeechBubble = (props) => (
-  <Wrapper>
-    <Bubble isLeftHanded={props.isLeftHanded}>
-      {props.children}
-    </Bubble>
-  </Wrapper>
+    <Wrapper>
+      <Bubble isLeftHanded={props.isLeftHanded}>
+        {props.children}
+      </Bubble>
+    </Wrapper>
 );
 
 SpeechBubble.propTypes = {

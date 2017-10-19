@@ -1,8 +1,11 @@
+import styledNormalize from 'styled-normalize';
 import {injectGlobal} from 'styled-components';
-import typography, {baseFontStackSansSerif} from './templates/typography';
+import { baseFontStackSerif } from './templates/typography';
 
-// eslint-disable-next-line
+/* language=CSS */
 injectGlobal`
+  ${styledNormalize}
+
   html {
     box-sizing: border-box;
   }
@@ -58,46 +61,14 @@ injectGlobal`
   body {
     height: 100%;
     color: #575756;
-    
-    font-family: ${baseFontStackSansSerif}
-    ${typography.bodyCopy}
+    font-family: ${baseFontStackSerif}
   }
   
   #root {
     height: 100%;
   }
   
-  h1 {
-    ${typography.trafalgar}
-    font-weight: 700;
-  }
-  
-  h2 {
-    ${typography.doublePica}
-    font-weight: 700;
-  }
-  
-  h3 {
-    ${typography.greatPrimer}
-    font-weight: 700;
-  }
-  
-  h4 {
-    ${typography.pica}
-    font-weight: 700;
-  }
-  
-  h5 {
-    ${typography.longPrimer}
-    font-weight: 700;
-  }
-  
-  h6 {
-    ${typography.brevier}
-    font-weight: 700;
-  }
-  
-  .pf-loading-overlay {
+  .u-loading-overlay {
     display: none;
   }
 `;

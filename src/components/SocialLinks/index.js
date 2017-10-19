@@ -1,17 +1,42 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import ReactTooltip from 'react-tooltip';
+import {FormattedMessage, injectIntl} from 'react-intl';
 
-import List from './List';
-import ListItem from './ListItem';
-import Link from './Link';
-import Header from './Header';
+import {visuallyHidden} from '../../styles/mixins';
+import typography from '../../styles/templates/typography';
+
+import ExternalLink from './ExternalLink';
 
 const Aside = styled.aside`
   float: right;
   padding: 0 1em 0 4em;
   background-image: linear-gradient(45deg, transparent 23%, #fff 23%);
   color: #575756;
+`;
+
+const Header = styled.h2`
+  ${visuallyHidden}
+`;
+
+const StyledUL = styled.ul`
+  display: flex;
+  list-style: none;
+`;
+
+const StyledLI = styled.li`
+  padding: .5em;
+  transition: transform .2s;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  ${typography.doublePica}
+  
+  @media (min-width: 37.5em) and (max-height: 31.25em) {
+    ${typography.pica}
+  }
 `;
 
 class SocialLinks extends Component {
@@ -43,43 +68,43 @@ class SocialLinks extends Component {
   render() {
     const externalLinks = [
       {
-        icon: 'fa fa-free-code-camp',
+        icon: 'free-code-camp',
         name: 'freeCodeCamp',
         url: 'https://www.freecodecamp.org/mensae',
       },
       {
-        icon: 'fa fa-github',
-        name: 'Github',
+        icon: 'github',
+        name: 'GitHub',
         url: 'https://github.com/Mensae',
       },
       {
-        icon: 'fa fa-linkedin-square',
+        icon: 'linkedin-square',
         name: 'LinkedIn',
         url: 'https://nl.linkedin.com/in/jmeester',
       },
       {
-        icon: 'fa fa-codepen',
+        icon: 'codepen',
         name: 'Codepen',
         url: 'https://codepen.io/jmeester',
       },
     ];
 
     return (
-      <Aside>
-        <Header>Find me on:</Header>
-        <List innerRef={e => this.list = e}>
-          {
-            externalLinks.map((externalLink, idx) => (
-              <ListItem key={idx} data-tip={externalLink.name}>
-                <Link href={externalLink.url} iconClass={externalLink.icon} description={externalLink.name}/>
-              </ListItem>
-            ))
-          }
-        </List>
-        <ReactTooltip />
-      </Aside>
+        <Aside>
+          <Header><FormattedMessage id='portfolio.social_links.header' defaultMessage='Also find me on:' /></Header>
+          <StyledUL innerRef={e => this.list = e}>
+            {
+              externalLinks.map((externalLink, idx) => (
+                  <StyledLI key={idx} data-tip={externalLink.name}>
+                    <ExternalLink href={externalLink.url} faIcon={externalLink.icon} description={externalLink.name}/>
+                  </StyledLI>
+              ))
+            }
+          </StyledUL>
+          <ReactTooltip />
+        </Aside>
     );
   }
 }
 
-export default SocialLinks;
+export default injectIntl(SocialLinks);

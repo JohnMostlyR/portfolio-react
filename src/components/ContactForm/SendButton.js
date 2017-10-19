@@ -1,5 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import FontAwesome from 'react-fontawesome';
+import {defineMessages, injectIntl} from 'react-intl';
+
 import typography, {baseFontBold} from '../../styles/templates/typography';
 import {svgToURL} from '../../styles/tools';
 
@@ -63,18 +67,47 @@ const Button = styled.button`
   }
 `;
 
-const ButtonFace = styled.span``;
-
-const ButtonIcon = styled.span.attrs({
-  className: 'fa fa-paper-plane',
-})`
+const ButtonIcon = styled(FontAwesome)`
   margin-right: .5rem;
 `;
 
-const SendButton = (props) => (
-  <Button disabled={props.disabled}>
-    <ButtonFace><ButtonIcon aria-hidden="true"/> {props.text}</ButtonFace>
-  </Button>
+const messages = defineMessages({
+  idle: {
+    id: 'send_button.idle',
+    description: 'Send button value in normal, idle, state.',
+    defaultMessage: 'Send',
+  },
+  sending: {
+    id: 'send_button.sending',
+    description: 'Send button value when data is send.',
+    defaultMessage: 'Sending...',
+  },
+  success: {
+    id: 'send_button.success',
+    description: 'Send button value when data is successfully sent.',
+    defaultMessage: 'Sent! I\'ll respond as soon as possible.',
+  },
+  error: {
+    id: 'send_button.error',
+    description: 'Send button value when an error occurred.',
+    defaultMessage: 'Failed. Please try again',
+  },
+});
+
+const SendButton = ({intl, disabled, buttonState}) => (
+    <Button disabled={disabled}>
+      <span><ButtonIcon name={'paper-plane'}/><span>{intl.formatMessage(messages[buttonState])}</span></span>
+    </Button>
 );
 
-export default SendButton;
+SendButton.propTypes = {
+  disabled: PropTypes.bool,
+  buttonState: PropTypes.oneOf(['idle', 'sending', 'success', 'error']).isRequired,
+};
+
+SendButton.defaultProps = {
+  disabled: true,
+  buttonState: 'idle',
+};
+
+export default injectIntl(SendButton);

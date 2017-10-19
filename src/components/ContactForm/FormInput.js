@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {injectIntl, FormattedMessage} from 'react-intl';
 import styled from 'styled-components';
 import mq from '../../styles/templates/mediaQueries';
 import typography, {baseFontRegular} from '../../styles/templates/typography';
@@ -30,7 +31,8 @@ const Input = styled.input`
   color: inherit;
 
   ${mq.m`
-    background-image: url(${svgToURL('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" preserveAspectRatio="xMaxYMid"><path fill="#A36200" d="M19 30h-5a3.004 3.004 0 0 1-2.614-4.472 3 3 0 0 1-.62-4.528 2.987 2.987 0 0 1-.595-3H3c-1.654 0-3-1.346-3-3s1.346-3 3-3h12.334l-2.932-5.501A3.004 3.004 0 0 1 15.001 2c.824 0 1.592.327 2.163.921l.022.023 6.815 7.474V8.999a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-1.382l-4.553 2.276a1.006 1.006 0 0 1-.447.106zm8-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-8.236 0L24 25.382V13.387l-8.287-9.088a1.002 1.002 0 0 0-1.591 1.18c.01.017.02.033.029.051l3.732 7a1 1 0 0 1-.882 1.47h-14c-.551 0-1 .449-1 1s.449 1 1 1h10a1 1 0 0 1 0 2c-.551 0-1 .449-1 1s.449 1 1 1a1 1 0 0 1 0 2c-.551 0-1 .449-1 1s.449 1 1 1h1a1 1 0 0 1 0 2c-.551 0-1 .449-1 1s.449 1 1 1h4.764z"/></svg>')});
+    background-image: url(${svgToURL(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" preserveAspectRatio="xMaxYMid"><path fill="#A36200" d="M19 30h-5a3.004 3.004 0 0 1-2.614-4.472 3 3 0 0 1-.62-4.528 2.987 2.987 0 0 1-.595-3H3c-1.654 0-3-1.346-3-3s1.346-3 3-3h12.334l-2.932-5.501A3.004 3.004 0 0 1 15.001 2c.824 0 1.592.327 2.163.921l.022.023 6.815 7.474V8.999a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-1.382l-4.553 2.276a1.006 1.006 0 0 1-.447.106zm8-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-8.236 0L24 25.382V13.387l-8.287-9.088a1.002 1.002 0 0 0-1.591 1.18c.01.017.02.033.029.051l3.732 7a1 1 0 0 1-.882 1.47h-14c-.551 0-1 .449-1 1s.449 1 1 1h10a1 1 0 0 1 0 2c-.551 0-1 .449-1 1s.449 1 1 1a1 1 0 0 1 0 2c-.551 0-1 .449-1 1s.449 1 1 1h1a1 1 0 0 1 0 2c-.551 0-1 .449-1 1s.449 1 1 1h4.764z"/></svg>')});
     background-position: calc(100% + 1.5em) 50%;
     background-repeat: no-repeat;
     background-size: 1.5em;
@@ -159,67 +161,83 @@ class FormInput extends Component {
 
   render() {
     const renderInput = () => (
-      <Input
-        type={this.props.inputType}
-        name={this.props.name}
-        onChange={this.onChange}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        value={this.state.value}
-        innerRef={el => this.inputElement = el}
-      />
+        <Input
+            type={this.props.inputType}
+            name={this.props.name}
+            onChange={this.onChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            value={this.state.value}
+            innerRef={el => this.inputElement = el}
+        />
     );
 
     const renderTextArea = () => (
-      <Textarea
-        style={{height: this.state._height}}
-        name={this.props.name}
-        onBlur={this.onBlur}
-        onChange={this.onChange}
-        onFocus={this.onFocus}
-        value={this.state.value}
-        innerRef={el => this.textAreaElement = el}
-      />
+        <Textarea
+            style={{height: this.state._height}}
+            name={this.props.name}
+            onBlur={this.onBlur}
+            onChange={this.onChange}
+            onFocus={this.onFocus}
+            value={this.state.value}
+            innerRef={el => this.textAreaElement = el}
+        />
     );
 
     const renderHelperText = () => {
       if (!this.props.helperText) return '';
 
-      let helperText = this.props.helperText;
+      let helperTextRange = '';
 
       if (this.props.minLength || this.props.maxLength) {
-        helperText = `${helperText} Should be between ${this.props.minLength} and ${this.props.maxLength} characters. Is now: ${this.state.value.length}`;
+        helperTextRange =
+            <FormattedMessage
+                id={'portfolio.page.contact.form_input.helper_text.range'}
+                defaultMessage='Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}'
+                values={{
+                  minLength: this.props.minLength,
+                  maxLength: this.props.maxLength,
+                  count: this.state.value.length,
+                }}
+            />;
       }
 
       if (this.state._hasFocus || this.state.error || !this.state.value) {
-        return helperText;
+        return (<span>{this.props.helperText}&nbsp;{helperTextRange}</span>);
       } else if (!this.state.error) {
-        return 'Thanks!';
+        return (
+            <FormattedMessage
+                id='portfolio.page.contact.form_input.helper_text.valid'
+                defaultMessage='Thanks!'
+            />
+        );
       }
 
       return '';
     };
 
-    const hasFocusOrValue=(this.state._hasFocus || this.state.value);
+    const hasFocusOrValue = (this.state._hasFocus || this.state.value);
 
     return (
-      <InputGroup>
-        <Label
-          htmlFor="name"
-          onClick={this.setFocus}
-        >
-          <LabelContent
-            hasFocus={hasFocusOrValue}>{this.props.label}<Placeholder hasFocus={hasFocusOrValue}><i>{this.props.placeholder}</i></Placeholder></LabelContent>
-        </Label>
-        {(this.props.isTextArea) ? renderTextArea() : renderInput()}
-        <div>
-          <ErrorMessage
-            showError={(!this.state._hasFocus && this.state.error)}>{`${this.state.error} `}</ErrorMessage>
-          <HelperText>{renderHelperText()}</HelperText>
-        </div>
-      </InputGroup>
+        <InputGroup>
+          <Label
+              htmlFor="name"
+              onClick={this.setFocus}
+          >
+            <LabelContent
+                hasFocus={hasFocusOrValue}>{this.props.label}<Placeholder
+                hasFocus={hasFocusOrValue}><i>{this.props.placeholder}</i></Placeholder></LabelContent>
+          </Label>
+          {(this.props.isTextArea) ? renderTextArea() : renderInput()}
+          <div>
+            <ErrorMessage
+                showError={(!this.state._hasFocus &&
+                    this.state.error)}>{`${this.state.error} `}</ErrorMessage>
+            <HelperText>{renderHelperText()}</HelperText>
+          </div>
+        </InputGroup>
     );
   }
 }
 
-export default FormInput;
+export default injectIntl(FormInput);

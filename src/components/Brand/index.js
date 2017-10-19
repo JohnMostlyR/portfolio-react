@@ -1,10 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
+import {rem} from 'polished';
+
 import Media from '../MediaObject/index';
 
 import MyLogo from '../../images/my-logo.svg';
+import typography from '../../styles/templates/typography';
 
-import Wrapper from './Wrapper';
-import BrandLink from './BrandLink';
+const Wrapper = styled.div`
+  float: left;
+  padding: 1vh 0 0 1vw;
+`;
+
+const BrandLink = styled.a.attrs({
+  href: props => props.href || '#',
+})`
+  display: inline-block;
+  width: ${rem('45px')};
+  color: #fff;
+  text-decoration: none;
+  
+  ${typography.minion}
+`;
 
 const Brand = (props) => (
   <Wrapper>

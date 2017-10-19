@@ -3,7 +3,7 @@ import {projects} from '../../data/projects';
 
 import ProjectsList from './ProjectsList';
 import ProjectsListItem from './ProjectsListItem';
-import Project from './Project';
+import Project from '../Project';
 
 const Projects = () => {
   return (

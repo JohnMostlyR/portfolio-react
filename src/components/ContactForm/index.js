@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
 import styled from 'styled-components';
+import {defineMessages, injectIntl} from 'react-intl';
 
+import FormInfo from './FormInfo';
 import FormInput from './FormInput';
 import SendButton from './SendButton';
 
@@ -15,17 +17,68 @@ const Form = styled.form`
   padding: .5rem;
 `;
 
-const FormInfo = styled.div`
-  padding-bottom: 1rem;
-`;
-
-const FormInfoItemsList = styled.ul`
-  list-style: none;
-`;
-
 const FormFooter = styled.div`
   text-align: center;
 `;
+
+const messages = defineMessages({
+  subject_text: {
+    id: 'portfolio.page.contact.form_input.helper_text.subject.text',
+    defaultMessage: 'Please provide a subject for your message.',
+  },
+  subject_label: {
+    id: 'portfolio.page.contact.form_input.helper_text.subject.label',
+    defaultMessage: 'Subject',
+  },
+  subject_error: {
+    id: 'portfolio.page.contact.form_input.helper_text.subject.error',
+    defaultMessage: 'A subject is required.',
+  },
+  your_message_text: {
+    id: 'portfolio.page.contact.form_input.helper_text.your_message.text',
+    defaultMessage: 'Please add your message here.',
+  },
+  your_message_label: {
+    id: 'portfolio.page.contact.form_input.helper_text.your_message.label',
+    defaultMessage: 'Your message',
+  },
+  your_message_error: {
+    id: 'portfolio.page.contact.form_input.helper_text.your_message.error',
+    defaultMessage: 'A message is required.',
+  },
+  name_text: {
+    id: 'portfolio.page.contact.form_input.helper_text.name.text',
+    defaultMessage: 'Please add your name here.',
+  },
+  name_label: {
+    id: 'portfolio.page.contact.form_input.helper_text.name.label',
+    defaultMessage: 'Your name',
+  },
+  name_placeholder: {
+    id: 'portfolio.page.contact.form_input.helper_text.name.placeholder',
+    defaultMessage: '(e.g. John Doo)',
+  },
+  name_error: {
+    id: 'portfolio.page.contact.form_input.helper_text.name.error',
+    defaultMessage: 'Your name is required.',
+  },
+  email_text: {
+    id: 'portfolio.page.contact.form_input.helper_text.email.text',
+    defaultMessage: 'Please add your email address here.',
+  },
+  email_label: {
+    id: 'portfolio.page.contact.form_input.helper_text.email.label',
+    defaultMessage: 'Your email address',
+  },
+  email_placeholder: {
+    id: 'portfolio.page.contact.form_input.helper_text.email.placeholder',
+    defaultMessage: '(e.g. my@email.com)',
+  },
+  email_error: {
+    id: 'portfolio.page.contact.form_input.helper_text.email.error',
+    defaultMessage: 'Your email address is required.',
+  },
+});
 
 class ContactForm extends Component {
   state = {
@@ -99,111 +152,111 @@ class ContactForm extends Component {
     this.setState({_sendStatus: 'SENDING'});
     const field = this.state.field;
 
-    fetch('https://meester-johan.info/contact-request', {
+    fetch('https://meester-johan.info/title-request', {
       method: 'post',
       headers: new Headers(
-        {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+          {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
       ),
       body: JSON.stringify({
         email: field.email,
         message: field.message,
         name: field.name,
-        subject: field.subject
+        subject: field.subject,
       }),
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          this.setState({_sendStatus: 'SUCCESS'});
-          console.log('Request succeeded with JSON response', data);
-        } else {
-          this.setState({_sendStatus: 'ERROR'});
-          console.log('Request failed with JSON response', data);
-          this.validateForm();
-        }
-      })
-      .catch(error => {
+    }).then(res => res.json()).then(data => {
+      if (data.success) {
+        this.setState({_sendStatus: 'SUCCESS'});
+        console.log('Request succeeded with JSON response', data);
+      } else {
         this.setState({_sendStatus: 'ERROR'});
-        console.log(`Request failed with error: ${error}`);
-      });
+        console.log('Request failed with JSON response', data);
+        this.validateForm();
+      }
+    }).catch(error => {
+      this.setState({_sendStatus: 'ERROR'});
+      console.log(`Request failed with error: ${error}`);
+    });
   };
 
   render() {
     const renderSendButton = () => {
       return {
-        IDLE: <SendButton text="Send" disabled={this.validateForm()} />,
-        SENDING: <SendButton text="Sending..." disabled={true}/>,
-        SUCCESS: <SendButton text="Sent! I'll respond as soon as possible." disabled={true}/>,
-        ERROR: <SendButton text="Failed. Please try again" disabled={this.validateForm()} />,
+        IDLE: <SendButton buttonState={'idle'} disabled={this.validateForm()}/>,
+        SENDING: <SendButton buttonState={'sending'} disabled/>,
+        SUCCESS: <SendButton buttonState={'success'} disabled/>,
+        ERROR: <SendButton buttonState={'error'} disabled={this.validateForm()}/>,
       }[this.state._sendStatus];
     };
 
     return (
-      <Form id="js-portfolio-form" name="contact-form" action="#" acceptCharset="utf-8" method="post" onSubmit={this.onFormSubmit}>
-        <div>
+        <Form onSubmit={this.onFormSubmit}>
           <div>
-            <FormInfo>
-              <FormInfoItemsList>
-                <li><span className="fa fa-info-circle" aria-hidden="true"/> Please fill in all fields</li>
-              </FormInfoItemsList>
-            </FormInfo>
             <div>
-              <FormInput
-                helperText="Please provide a subject for your message."
-                label="Subject"
-                maxLength={50}
-                minLength={3}
-                name="subject"
-                onChange={this.onInputChange}
-                validate={val => (isLength(val, {min: 3, max: 50})) ? false : 'A subject is required.'}
-                value={this.state.field.subject}
-              />
-              <FormInput
-                helperText="Please add your message here."
-                label="Your message"
-                maxLength={300}
-                minLength={5}
-                name="message"
-                onChange={this.onInputChange}
-                isTextArea={true}
-                validate={val => (isLength(val, {min: 5, max: 300})) ? false : 'A message is required.'}
-                value={this.state.field.message}
-              />
-              <FormInput
-                helperText="Please add your name here."
-                label="Your name"
-                maxLength={50}
-                minLength={2}
-                name="name"
-                placeholder="(e.g. John Doo)"
-                onChange={this.onInputChange}
-                validate={val => (isLength(val, {min: 2, max: 50})) ? false : 'Your name is required.'}
-                value={this.state.field.name}
-              />
-              <FormInput
-                helperText="Please add your email address here."
-                inputType="email"
-                label="Your email address"
-                name="email"
-                placeholder="(e.g. my@email.com)"
-                onChange={this.onInputChange}
-                validate={val => (isEmail(val)) ? false : 'Your email address is required.'}
-                value={this.state.field.email}
-              />
+              <FormInfo/>
+              <div>
+                <FormInput
+                    helperText={this.props.intl.formatMessage(messages.subject_text)}
+                    label={this.props.intl.formatMessage(messages.subject_label)}
+                    maxLength={50}
+                    minLength={3}
+                    name="subject"
+                    onChange={this.onInputChange}
+                    validate={val => (isLength(val, {min: 3, max: 50}))
+                        ? false
+                        : this.props.intl.formatMessage(messages.subject_error)}
+                    value={this.state.field.subject}
+                />
+                <FormInput
+                    helperText={this.props.intl.formatMessage(messages.your_message_text)}
+                    label={this.props.intl.formatMessage(messages.your_message_label)}
+                    maxLength={300}
+                    minLength={5}
+                    name="message"
+                    onChange={this.onInputChange}
+                    isTextArea={true}
+                    validate={val => (isLength(val, {min: 5, max: 300}))
+                        ? false
+                        : this.props.intl.formatMessage(messages.your_message_error)}
+                    value={this.state.field.message}
+                />
+                <FormInput
+                    helperText={this.props.intl.formatMessage(messages.name_text)}
+                    label={this.props.intl.formatMessage(messages.name_label)}
+                    maxLength={50}
+                    minLength={2}
+                    name="name"
+                    placeholder={this.props.intl.formatMessage(messages.name_placeholder)}
+                    onChange={this.onInputChange}
+                    validate={val => (isLength(val, {min: 2, max: 50}))
+                        ? false
+                        : this.props.intl.formatMessage(messages.name_error)}
+                    value={this.state.field.name}
+                />
+                <FormInput
+                    helperText={this.props.intl.formatMessage(messages.email_text)}
+                    inputType="email"
+                    label={this.props.intl.formatMessage(messages.email_label)}
+                    name="email"
+                    placeholder={this.props.intl.formatMessage(messages.email_placeholder)}
+                    onChange={this.onInputChange}
+                    validate={val => (isEmail(val)) ? false : this.props.intl.formatMessage(
+                        messages.email_error)}
+                    value={this.state.field.email}
+                />
+              </div>
+              <FormFooter>
+                {
+                  renderSendButton()
+                }
+              </FormFooter>
             </div>
-            <FormFooter>
-              {
-                renderSendButton()
-              }
-            </FormFooter>
           </div>
-        </div>
-      </Form>
+        </Form>
     );
   }
 }
 
-export default ContactForm;
+export default injectIntl(ContactForm);

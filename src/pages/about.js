@@ -1,20 +1,48 @@
-import React from 'react';
-import Layout from '../layouts';
-import SpeechBubble from '../components/SpeechBubble/index';
+import React, {Component} from 'react';
+import {FormattedMessage} from 'react-intl';
+import {Row, Column} from 'hedron';
+import Parser from 'html-react-parser';
 
-const AboutPage = () => (
-  <Layout pageTitle="ABOUT ME">
-    <SpeechBubble>
-      <p>I am a front-end developer from Amsterdam, The Netherlands.</p>
-      <p>I am customer driven with a passion for results and always going the
-        extra mile to get things done. I like being social with my colleagues and love to bring in
-        some humor.</p>
-      <p>I enjoy the process of creative problem-solving and want to understand
-        complex issues. I love innovation and to bring original ideas to people. Seeing people enjoy
-        what I made,
-        or played a part in, is of utmost importance to me.</p>
-    </SpeechBubble>
-  </Layout>
-);
+import {getContentFromContentful} from '../clients/contentful/';
+import StyledSection from '../components/StyledSection';
+import SpeechBubble from '../components/SpeechBubble';
+import PageHeader from '../components/PageHeader';
 
-export default AboutPage;
+class About extends Component {
+  state = {
+    content: {
+      en: '',
+    },
+  };
+
+  componentWillMount() {
+    const json = getContentFromContentful({contentType: 'about', locale: '*'});
+    json.then(
+        (json) => (this.setState({content: json}))
+    );
+  }
+
+  render() {
+    return (
+        <StyledSection>
+          <Row tagName={'div'}>
+            <Column>
+              <PageHeader isLeftHanded>
+                <FormattedMessage id={'portfolio.page.about.title'}
+                                  defaultMessage={'ABOUT ME'}/>
+              </PageHeader>
+            </Column>
+          </Row>
+          <Row tagName={'div'}>
+            <Column>
+              <SpeechBubble>
+                {Parser(this.state.content['en'] || '')}
+              </SpeechBubble>
+            </Column>
+          </Row>
+        </StyledSection>
+    );
+  }
+}
+
+export default About;

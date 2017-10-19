@@ -1,21 +1,48 @@
-import React from 'react';
-import Layout from '../layouts';
-import SpeechBubble from '../components/SpeechBubble/index';
+import React, {Component} from 'react';
+import {FormattedMessage} from 'react-intl';
+import {Row, Column} from 'hedron';
+import Parser from 'html-react-parser';
 
-const SkillsPage = () => (
-  <Layout pageTitle="MY SKILLS">
-    <SpeechBubble>
-      <p>My curiosity and a broad range of interest makes that I am very versatile
-        and in my professional life I have touched front-end, back-end as well as UX.</p>
-      <p>When it comes to my set of front-end developer skills I bring a very good
-        understanding of <b>HTML5</b>, <b>(S)CSS</b> and <b>JavaScript</b>. I have used <b>jQuery</b> and used <b>Handlebars</b>
-        as templating engine. I strive to use as less dependencies as possible though.</p>
-      <p>Some of the tools I love to work with are <b>Git(Hub)</b>,
-        <b>WebStorm</b>, <b>Chrome Developer Tools</b>, <b>Grunt</b> and <b>Photoshop</b>.</p>
-      <p>Currently mastering <b>React</b>, where this site is an example of <span
-        className="fa fa-smile-o" aria-hidden="true"/>.</p>
-    </SpeechBubble>
-  </Layout>
-);
+import {getContentFromContentful} from '../clients/contentful/';
+import StyledSection from '../components/StyledSection';
+import SpeechBubble from '../components/SpeechBubble';
+import PageHeader from '../components/PageHeader';
 
-export default SkillsPage;
+class Skills extends Component {
+  state = {
+    content: {
+      en: '',
+    },
+  };
+
+  componentWillMount() {
+    const json = getContentFromContentful({contentType: 'skills', locale: '*'});
+    json.then(
+        (json) => (this.setState({content: json}))
+    );
+  }
+
+  render() {
+    return (
+        <StyledSection>
+          <Row tagName={'div'}>
+            <Column>
+              <PageHeader isLeftHanded>
+                <FormattedMessage id={'portfolio.page.skills.title'}
+                                  defaultMessage={'MY SKILLS'}/>
+              </PageHeader>
+            </Column>
+          </Row>
+          <Row tagName={'div'}>
+            <Column>
+              <SpeechBubble>
+                {Parser(this.state.content['en'] || '')}
+              </SpeechBubble>
+            </Column>
+          </Row>
+        </StyledSection>
+    );
+  }
+}
+
+export default Skills;

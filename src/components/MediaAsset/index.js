@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import mq from '../../styles/templates/mediaQueries';
-import ResponsiveImage from '../ResponsiveImage/index';
+import ResponsiveImage from '../ResponsiveImage';
 
 const Figure = styled.figure`
   align-items: center;
@@ -57,11 +57,11 @@ const ImageWrapper = ResponsiveImage.extend`
 `;
 
 const MediaAsset = (props) => (
-  <Figure isOdd={props.isOdd}>
-    <Body>
+    <Figure isOdd={props.isOdd}>
+      <Body>
       <ImageWrapper imageSource={props.imageSource} imageAlt='Project' ratio='16by9'/>
-    </Body>
-  </Figure>
+      </Body>
+    </Figure>
 );
 
 export default MediaAsset;

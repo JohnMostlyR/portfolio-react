@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import ProjectExternalLink from './ProjectExternalLink';
 
-const UL = styled.ul`
+const StyledList = styled.ul`
   height: 1.5em;
   margin: 0;
   padding: 0;
@@ -13,24 +13,23 @@ const UL = styled.ul`
 `;
 
 const ProjectLinksList = (props) => (
-  <UL>
-    {
-      props.links.map(
-        (link) => (
-          <ProjectExternalLink
-            key={link.name}
-            name={link.name}
-            url={link.url}
-            icon={link.icon}
-          />
+    <StyledList>
+      {
+        props.links.map(
+            ({name, url, faIcon}, idx) => (
+                <ProjectExternalLink
+                    key={idx}
+                    name={name}
+                    url={url}
+                    faIcon={faIcon}
+                />
+            )
         )
-      )
-    }
-  </UL>
+      }
+    </StyledList>
 );
 
 ProjectLinksList.propTypes = {
-  title: PropTypes.string,
   links: PropTypes.array,
 };
 

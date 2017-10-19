@@ -16,6 +16,7 @@ ${
 export const baseFontStackSerif = `
 ${
   [
+      '"Skolar Regular"',
     '"Roboto Slab"',
     '"Droid Serif"',
     'Cambria',
@@ -213,7 +214,7 @@ const sizes = {
     },
     groupC: {
       fontSize: 26,
-      lineHeight: 30,
+      lineHeight: 40,
     },
     groupD: {
       fontSize: 24,
