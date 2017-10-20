@@ -12,13 +12,14 @@ class Skills extends Component {
   state = {
     content: {
       en: '',
+      nl: '',
     },
   };
 
   componentWillMount() {
     const json = getContentFromContentful({contentType: 'skills', locale: '*'});
     json.then(
-        (json) => (this.setState({content: json}))
+        (json) => (this.setState({content: json})),
     );
   }
 

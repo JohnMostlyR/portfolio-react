@@ -12,6 +12,7 @@ class About extends Component {
   state = {
     content: {
       en: '',
+      nl: '',
     },
   };
 

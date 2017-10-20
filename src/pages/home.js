@@ -232,8 +232,11 @@ class HomePage extends Component {
                       <text fill="#95C11F" fontSize="65.685" x="172"
                             y="496">{this.props.intl.formatMessage(messages.greeting)}</text>
                       <g id="g2" style={{'opacity': 0}}>
-                        <text id="t2" fill="#FFF" fontSize="47" textAnchor="end" x="555" y="545">
+                        <text id="t2" fill="#FFF" fontSize="47" textAnchor="end" x="571" y="545">
                           {this.props.intl.formatMessage(messages.intro, {name: 'Johan Meester'})}
+                        </text>
+                        <text id="t" fill="#FFF" fontSize="47" textAnchor="end" x="571" y="545">
+                          {'I am Johan Meester'}
                         </text>
                         <defs>
                           <mask id="m1">
@@ -245,7 +248,7 @@ class HomePage extends Component {
                                mask="url('#m1')"/>
                       </g>
                       <text id="t3" style={{'fontSize': '20px', 'textAnchor': 'end', 'opacity': 0}}
-                            fill="#FFF" x="555" y="580">{this.props.intl.formatMessage(
+                            fill="#FFF" x="571" y="580">{this.props.intl.formatMessage(
                           messages.trade)}
                       </text>
                     </svg>
