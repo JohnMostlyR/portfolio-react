@@ -4,7 +4,6 @@ import {Row, Column} from 'hedron';
 import {rem} from 'polished';
 import {defineMessages, injectIntl} from 'react-intl';
 
-import StyledSection from '../components/StyledSection';
 import mq from '../styles/templates/mediaQueries';
 import {visuallyHidden} from '../styles/mixins';
 
@@ -208,7 +207,7 @@ class HomePage extends Component {
 
   render() {
     return (
-        <StyledSection>
+        <IntroPageSection>
           <Row tagName={'div'}>
             <Column fluid>
               <IntroPageSection>
@@ -254,7 +253,7 @@ class HomePage extends Component {
               </IntroPageSection>
             </Column>
           </Row>
-        </StyledSection>
+        </IntroPageSection>
     );
   }
 }
