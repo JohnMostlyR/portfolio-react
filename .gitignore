@@ -23,3 +23,6 @@ yarn-error.log*
 
 # contains sensitive information
 /src/config.js
+
+# extrected default messages for Intl
+/src/lang/messages/

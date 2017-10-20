@@ -26,6 +26,7 @@
     "file-loader": "0.11.2",
     "font-awesome": "^4.7.0",
     "fs-extra": "3.0.1",
+    "glob": "^7.1.2",
     "hedron": "^0.7.1",
     "html-react-parser": "^0.4.0",
     "html-webpack-plugin": "2.29.0",
@@ -33,6 +34,7 @@
     "isomorphic-unfetch": "^2.0.0",
     "jest": "20.0.4",
     "marked": "^0.3.6",
+    "mkdirp": "^0.5.1",
     "object-assign": "4.1.1",
     "polished": "^1.8.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -63,7 +65,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "build:langs": "cross-env NODE_ENV='development' node ./utils/default-lang.js"
   },
   "devDependencies": {
     "babel-plugin-react-intl": "^2.3.1",
@@ -116,12 +119,17 @@
       "stage-0"
     ],
     "plugins": [
-      "syntax-dynamic-import"
+      "syntax-dynamic-import",
+      [
+        "react-intl",
+        {
+          "messagesDir": "./src/lang/messages/"
+        }
+      ]
     ],
     "env": {
       "development": {
         "plugins": [
-          "react-intl",
           [
             "babel-plugin-styled-components",
             {
@@ -134,12 +142,6 @@
       },
       "production": {
         "plugins": [
-          [
-            "react-intl",
-            {
-              "messagesDir": "lang/.messages/"
-            }
-          ],
           [
             "babel-plugin-styled-components",
             {

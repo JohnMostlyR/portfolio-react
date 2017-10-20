@@ -15,15 +15,9 @@ async function getFromContentful({contentType, select = 'fields', locale = 'en-U
           `${currentValue}=${queryParam[currentValue]}`), [])
       .join('&');
 
-  console.log(`Sending request: ${ENDPOINT}${query}`);
-
   const res = await fetch(`${ENDPOINT}${query}`);
 
-  console.log('Got response');
-
-  const json = await res.json();
-
-  return json;
+  return await res.json();
 }
 
 export async function getContentFromContentful({contentType, select = 'fields', locale = '*'} = {}) {

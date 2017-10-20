@@ -121,7 +121,7 @@ const NavigationItems = (props) => (
           <SiteNavigationIcon name={'home'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.home'
-                              defaultMessage='Home'
+                              defaultMessage='Intro'
             />
           </Description>
         </SiteNavLink>

@@ -1,13 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {IntlProvider} from 'react-intl';
+import {hydrate} from 'react-dom';
+import {IntlProvider, addLocaleData} from 'react-intl';
 import {BrowserRouter as Router} from 'react-router-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 import styledNormalize from 'styled-normalize';
 import {injectGlobal} from 'styled-components';
-import { baseFontStackSansSerif } from './styles/templates/typography';
+import {baseFontStackSansSerif} from './styles/templates/typography';
+
+import en from 'react-intl/locale-data/en';
+import nl from 'react-intl/locale-data/nl';
+
+// Our translated strings
+import localeData from './lang/translations.json';
+
+addLocaleData([...en, ...nl]);
+
+const language = (navigator.languages && navigator.languages[0])
+    || navigator.language
+    || navigator.userLanguage;
+
+const usersLocale = language.substr(0, 2);
+
+// Try full locale, try locale without region code, fallback to 'en'
+const translationsForUsersLocale = localeData[usersLocale]
+    || localeData[language]
+    || localeData.en;
 
 /* language=CSS */
 injectGlobal`
@@ -80,13 +99,35 @@ injectGlobal`
   }
 `;
 
-ReactDOM.hydrate(
-    <IntlProvider locale="en">
-      <Router>
-        <App/>
-      </Router>
-    </IntlProvider>,
-    document.getElementById('root'),
-);
+// If browser doesn't support Intl (i.e. Safari), then we manually import
+// the intl polyfill and locale data.
+if (!window.Intl) {
+  require.ensure([
+    'intl',
+    'intl/locale-data/jsonp/en.js',
+    'intl/locale-data/jsonp/nl.js',
+  ], (require) => {
+    require('intl');
+    require('intl/locale-data/jsonp/en.js');
+    require('intl/locale-data/jsonp/nl.js');
+    hydrate(
+        <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
+          <Router>
+            <App/>
+          </Router>
+        </IntlProvider>,
+        document.getElementById('root')
+    );
+  });
+} else {
+  hydrate(
+      <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
+        <Router>
+          <App/>
+        </Router>
+      </IntlProvider>,
+      document.getElementById('root')
+  );
+}
 
 registerServiceWorker();
