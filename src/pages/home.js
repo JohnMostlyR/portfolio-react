@@ -235,9 +235,6 @@ class HomePage extends Component {
                         <text id="t2" fill="#FFF" fontSize="47" textAnchor="end" x="571" y="545">
                           {this.props.intl.formatMessage(messages.intro, {name: 'Johan Meester'})}
                         </text>
-                        <text id="t" fill="#FFF" fontSize="47" textAnchor="end" x="571" y="545">
-                          {'I am Johan Meester'}
-                        </text>
                         <defs>
                           <mask id="m1">
                             <circle cx="553" cy="407" fill="#fff" r="32.5"/>
