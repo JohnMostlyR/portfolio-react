@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FormattedMessage} from 'react-intl';
+import {intlShape, injectIntl, FormattedMessage} from 'react-intl';
 import {Row, Column} from 'hedron';
 import Parser from 'html-react-parser';
 
@@ -9,17 +9,20 @@ import SpeechBubble from '../components/SpeechBubble';
 import PageHeader from '../components/PageHeader';
 
 class About extends Component {
+  static propTypes = {
+    intl: intlShape.isRequired,
+  };
+
   state = {
-    content: {
-      en: '',
-      nl: '',
-    },
+    content: 'Loading...',
   };
 
   componentWillMount() {
-    const json = getContentFromContentful({contentType: 'about', locale: '*'});
-    json.then(
-        (json) => (this.setState({content: json}))
+    const content = getContentFromContentful({contentType: 'about', locale: this.props.intl.locale});
+    content.then(
+        (_content) => {
+          this.setState({content: _content})
+        },
     );
   }
 
@@ -37,7 +40,7 @@ class About extends Component {
           <Row tagName={'div'}>
             <Column>
               <SpeechBubble>
-                {Parser(this.state.content['en'] || '')}
+                {Parser(this.state.content || '')}
               </SpeechBubble>
             </Column>
           </Row>
@@ -46,4 +49,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default injectIntl(About);
