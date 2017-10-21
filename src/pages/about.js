@@ -18,12 +18,22 @@ class About extends Component {
   };
 
   componentWillMount() {
-    const content = getContentFromContentful({contentType: 'about', locale: this.props.intl.locale});
-    content.then(
-        (_content) => {
-          this.setState({content: _content})
-        },
+    const content = getContentFromContentful(
+        {
+          contentType: 'about',
+          locale: this.props.intl.locale
+        }
     );
+
+    content
+        .then(
+            (_content) => {
+              this.setState({content: _content});
+            },
+        )
+        .catch(err => {
+          console.error('Unable to get about content from CMS: ', err.message);
+        });
   }
 
   render() {

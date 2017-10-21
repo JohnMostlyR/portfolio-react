@@ -18,12 +18,22 @@ class Skills extends Component {
   };
 
   componentWillMount() {
-    const content = getContentFromContentful({contentType: 'skills', locale: this.props.intl.locale});
-    content.then(
-        (_content) => {
-          this.setState({content: _content})
-        },
+    const content = getContentFromContentful(
+        {
+          contentType: 'skills',
+          locale: this.props.intl.locale
+        }
     );
+
+    content
+        .then(
+            (_content) => {
+              this.setState({content: _content});
+            },
+        )
+        .catch(err => {
+          console.error('Unable to get skills content from CMS: ', err.message);
+        });
   }
 
   render() {

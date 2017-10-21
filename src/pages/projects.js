@@ -74,16 +74,20 @@ class Projects extends React.Component {
 
   componentWillMount() {
     const json = getFromContentful({contentType: 'projects', locale: 'nl'});
-    json.then(
-        (json) => {
-          const receivedProjects = parseContent(json);
-          this.setState(prevState => {
-            return {
-              projects: prevState.projects.concat(receivedProjects),
-            }
-          });
-        },
-    );
+    json
+        .then(
+            (json) => {
+              const receivedProjects = parseContent(json);
+              this.setState(prevState => {
+                return {
+                  projects: prevState.projects.concat(receivedProjects),
+                };
+              });
+            },
+        )
+        .catch(err => {
+          console.error('Unable to get projects content from CMS: ', err.message);
+        });
   }
 
   render() {

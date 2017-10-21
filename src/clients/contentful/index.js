@@ -21,18 +21,25 @@ async function getFromContentful({contentType, select = 'fields', locale = 'en-U
           `${currentValue}=${queryParam[currentValue]}`), [])
       .join('&');
 
-  const res = await fetch(`${ENDPOINT}${query}`);
-
-  return await res.json();
+  try {
+    const res = await fetch(`${ENDPOINT}${query}`);
+    return await res.json();
+  } catch (err) {
+    console.error('Error occurred when trying gto get data from contentful: ', err.message);
+  }
 }
 
 export async function getContentFromContentful({contentType, select = 'fields', locale = 'en-US'} = {}) {
-  const json = await getFromContentful({contentType, select, locale});
+  try {
+    const json = await getFromContentful({contentType, select, locale});
 
-  if (String(json.sys.type).toLowerCase() === 'array') {
-    const markdown = json.items[0].fields.content; // About has one field
+    if (String(json.sys.type).toLowerCase() === 'array') {
+      const markdown = json.items[0].fields.content; // About has one field
 
-    return marked(markdown);
+      return marked(markdown);
+    }
+  } catch (err) {
+    console.error('Error occurred when trying gto get data from contentful: ', err.message);
   }
 }
 
