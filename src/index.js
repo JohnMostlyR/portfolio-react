@@ -99,35 +99,13 @@ injectGlobal`
   }
 `;
 
-// If browser doesn't support Intl (i.e. Safari), then we manually import
-// the intl polyfill and locale data.
-if (!window.Intl) {
-  require.ensure([
-    'intl',
-    'intl/locale-data/jsonp/en.js',
-    'intl/locale-data/jsonp/nl.js',
-  ], (require) => {
-    require('intl');
-    require('intl/locale-data/jsonp/en.js');
-    require('intl/locale-data/jsonp/nl.js');
-    hydrate(
-        <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
-          <Router>
-            <App/>
-          </Router>
-        </IntlProvider>,
-        document.getElementById('root')
-    );
-  });
-} else {
-  hydrate(
-      <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
-        <Router>
-          <App/>
-        </Router>
-      </IntlProvider>,
-      document.getElementById('root')
-  );
-}
+hydrate(
+    <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
+      <Router>
+        <App/>
+      </Router>
+    </IntlProvider>,
+    document.getElementById('root')
+);
 
 registerServiceWorker();
