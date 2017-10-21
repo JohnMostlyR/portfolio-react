@@ -1,0 +1,47 @@
+[
+  {
+    "title": "A Simon Game",
+    "subtitle": "'Build a Simon Game'",
+    "description": "A freeCodeCamp challenge",
+    "thumbnail": {
+      "url": "//images.contentful.com/1tymefars1bj/25XzHu0s92Yg6MCIAO4Q6c/6f4504bec5a3ddc1fc72d88773751355/simon-s1-16x9.png",
+      "details": {
+        "size": 96854,
+        "image": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "fileName": "simon-s1-16x9.png",
+      "contentType": "image/png"
+    },
+    "externalLinks": [
+      {
+        "faIcon": "github",
+        "name": "simon",
+        "url": "https://github.com/Mensae/simon"
+      },
+      {
+        "faIcon": "codepen",
+        "name": "simon",
+        "url": "https://codepen.io/jmeester/full/xrgwKR"
+      },
+      {
+        "faIcon": "free-code-camp",
+        "name": "A Simon Game",
+        "url": "https://www.freecodecamp.org/challenges/Build%20a%20Simon%20Game"
+      }
+    ],
+    "date": "2017-07-04T00:00+02:00"
+  },
+  {
+    "title": "In progress...",
+    "subtitle": "More to come!",
+    "description": "Busy creating some new awesomeness.",
+    "date": "2016-01-01T00:00+02:00",
+    "thumbnail": {
+      "url": "#"
+    },
+    "externalLinks": []
+  }
+]
