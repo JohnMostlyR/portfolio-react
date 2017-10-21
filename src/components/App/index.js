@@ -5,7 +5,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
+import {defineMessages, injectIntl, intlShape} from 'react-intl';
 import styled from 'styled-components';
 
 import SiteHeader from '../SiteHeader/index';
