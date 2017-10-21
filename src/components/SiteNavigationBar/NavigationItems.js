@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {FormattedMessage, injectIntl} from 'react-intl';
 import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import mq from '../../styles/templates/mediaQueries';
 import typography, {baseFontStackSansSerif} from '../../styles/templates/typography';
 
@@ -26,7 +27,7 @@ const StyledLI = styled.li`
   }
 `;
 
-const SiteNavLink = styled(NavLink)`
+const SiteNavLink = styled(Link)`
   display: inline-block;
   position: relative;
   background-color: #FF6633;
@@ -81,6 +82,20 @@ const SiteNavLink = styled(NavLink)`
     width: max-content;
   `}
   
+  ${(props) => {
+  if (props['data-isactive']) {
+    return (`
+      background-color: transparent;
+      color: #FF6633;
+
+      &::before {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    `);
+  }
+}}
+
   &.is-active {
     background-color: transparent;
     color: #FF6633;
@@ -114,10 +129,10 @@ const Description = styled.span`
   }
 `;
 
-const NavigationItems = (props) => (
+const NavigationItems = (props, context) => (
     <StyledUL>
       <StyledLI>
-        <SiteNavLink to={'/'}>
+        <SiteNavLink to={'/'} data-isactive={context.router.route.location.pathname === '/'}>
           <SiteNavigationIcon name={'home'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.home'
@@ -127,7 +142,8 @@ const NavigationItems = (props) => (
         </SiteNavLink>
       </StyledLI>
       <StyledLI>
-        <SiteNavLink to={'/about'}>
+        <SiteNavLink to={'/about'}
+                     data-isactive={context.router.route.location.pathname === '/about'}>
           <SiteNavigationIcon name={'address-card'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.about'
@@ -137,7 +153,8 @@ const NavigationItems = (props) => (
         </SiteNavLink>
       </StyledLI>
       <StyledLI>
-        <SiteNavLink to={'/skills'}>
+        <SiteNavLink to={'/skills'}
+                     data-isactive={context.router.route.location.pathname === '/skills'}>
           <SiteNavigationIcon name={'code'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.skills'
@@ -147,7 +164,8 @@ const NavigationItems = (props) => (
         </SiteNavLink>
       </StyledLI>
       <StyledLI>
-        <SiteNavLink to={'/projects'}>
+        <SiteNavLink to={'/projects'}
+                     data-isactive={context.router.route.location.pathname === '/projects'}>
           <SiteNavigationIcon name={'list'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.projects'
@@ -157,7 +175,8 @@ const NavigationItems = (props) => (
         </SiteNavLink>
       </StyledLI>
       <StyledLI>
-        <SiteNavLink to={'/contact'}>
+        <SiteNavLink to={'/contact'}
+                     data-isactive={context.router.route.location.pathname === '/contact'}>
           <SiteNavigationIcon name={'send'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.contact'
@@ -168,5 +187,9 @@ const NavigationItems = (props) => (
       </StyledLI>
     </StyledUL>
 );
+
+NavigationItems.contextTypes = {
+  router: PropTypes.object,
+};
 
 export default injectIntl(NavigationItems);
