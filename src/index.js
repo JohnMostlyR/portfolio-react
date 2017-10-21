@@ -10,6 +10,8 @@ import styledNormalize from 'styled-normalize';
 import {injectGlobal} from 'styled-components';
 import {baseFontStackSansSerif} from './styles/templates/typography';
 
+import mq from './styles/templates/mediaQueries';
+
 import en from 'react-intl/locale-data/en';
 import nl from 'react-intl/locale-data/nl';
 
@@ -74,7 +76,7 @@ injectGlobal`
   }
   
   html {
-    font-size: 1em;
+    font-size: .7em;
     line-height: 1.5;
     overflow-x: hidden;
     height: 100%;
@@ -98,6 +100,12 @@ injectGlobal`
   .u-loading-overlay {
     display: none;
   }
+  
+  ${mq.s`
+    html {
+        font-size: 1em;
+    }
+  `}
 `;
 
 render(

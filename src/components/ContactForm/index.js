@@ -15,6 +15,10 @@ const Form = styled.form`
   border-radius: .5rem;
   color: #222;
   padding: .5rem;
+  
+  @media (min-width: 31em) {
+    width: 31em;
+  }
 `;
 
 const FormFooter = styled.div`
@@ -152,7 +156,7 @@ class ContactForm extends Component {
     this.setState({_sendStatus: 'SENDING'});
     const field = this.state.field;
 
-    fetch('https://meester-johan.info/title-request', {
+    fetch('https://meester-johan.info/contact-request', {
       method: 'post',
       headers: new Headers(
           {
@@ -166,19 +170,22 @@ class ContactForm extends Component {
         name: field.name,
         subject: field.subject,
       }),
-    }).then(res => res.json()).then(data => {
-      if (data.success) {
-        this.setState({_sendStatus: 'SUCCESS'});
-        console.log('Request succeeded with JSON response', data);
-      } else {
-        this.setState({_sendStatus: 'ERROR'});
-        console.log('Request failed with JSON response', data);
-        this.validateForm();
-      }
-    }).catch(error => {
-      this.setState({_sendStatus: 'ERROR'});
-      console.log(`Request failed with error: ${error}`);
-    });
+    })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            this.setState({_sendStatus: 'SUCCESS'});
+            console.log('Request succeeded with JSON response', data);
+          } else {
+            this.setState({_sendStatus: 'ERROR'});
+            console.log('Request failed with JSON response', data);
+            this.validateForm();
+          }
+        })
+        .catch(error => {
+          this.setState({_sendStatus: 'ERROR'});
+          console.log(`Request failed with error: ${error.message}`);
+        });
   };
 
   render() {

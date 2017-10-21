@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {rem} from 'polished';
+import {em} from 'polished';
 import {svgToURL} from '../../styles/tools';
 import mq from '../../styles/templates/mediaQueries';
 import typography, {baseFontStackSerif} from '../../styles/templates/typography';
@@ -13,7 +13,7 @@ const Bubble = styled.div`
   font-family: ${baseFontStackSerif}
   padding: .5em;
 
-  @media (min-height: ${rem('750px')} {
+  @media (min-height: ${em('750px')} {
     margin-right: 0;
     border-bottom-left-radius: ${props => (props.isLeftHanded) ? 0 : '.5rem'};
     border-bottom-right-radius: ${props => (props.isLeftHanded) ? '.5rem' : 0};
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
   width: 100%;
   ${typography.doublePica};
 
-  ${mq.xl`max-width: ${rem('1008px')};`}
+  ${mq.xl`max-width: ${em('1008px')};`}
 
   ${Bubble} p {
     &:not(:first-child) {
