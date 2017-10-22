@@ -9,8 +9,7 @@ import {visuallyHidden} from '../styles/mixins';
 
 import MyPicture from '../images/itsme-trevi-rome.jpg';
 
-const IntroPageSection = styled.div`
-  align-items: flex-start;
+const IntroPageSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -210,7 +209,6 @@ class HomePage extends Component {
         <IntroPageSection>
           <Row tagName={'div'}>
             <Column fluid>
-              <IntroPageSection>
                 <IntroHeader>
                   <InvisibleH2>{this.props.intl.formatMessage(messages.title)}</InvisibleH2>
                   <SpeechBubble innerRef={d => this.svgDiv = d}>
@@ -250,7 +248,6 @@ class HomePage extends Component {
                     </svg>
                   </SpeechBubble>
                 </IntroHeader>
-              </IntroPageSection>
             </Column>
           </Row>
         </IntroPageSection>

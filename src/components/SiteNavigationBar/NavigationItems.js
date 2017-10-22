@@ -83,28 +83,18 @@ const SiteNavLink = styled(Link)`
   `}
   
   ${(props) => {
-  if (props['data-isactive']) {
-    return (`
-      background-color: transparent;
-      color: #FF6633;
-
-      &::before {
-        opacity: 1;
-        transform: scale3d(1, 1, 1);
-      }
-    `);
-  }
-}}
-
-  &.is-active {
-    background-color: transparent;
-    color: #FF6633;
-
-    &::before {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
+    if (props['data-isactive']) {
+      return (`
+        background-color: transparent;
+        color: #FF6633;
+  
+        &::before {
+          opacity: 1;
+          transform: scale3d(1, 1, 1);
+        }
+      `);
     }
-  }
+  }}
 `;
 
 const SiteNavigationIcon = styled(FontAwesome)`
@@ -124,7 +114,7 @@ const Description = styled.span`
     display: none;
   }
 
-  @media all and (orientation: landscape) and (min-height: 37.5em) {
+  @media all and (orientation: landscape) and (min-height: 725px) {
     display: inline;
   }
 `;
@@ -132,7 +122,7 @@ const Description = styled.span`
 const NavigationItems = (props, context) => (
     <StyledUL>
       <StyledLI>
-        <SiteNavLink to={'/'} data-isactive={context.router.route.location.pathname === '/'}>
+        <SiteNavLink to={'/home'} data-isactive={context.router.route.location.pathname === '/home'}>
           <SiteNavigationIcon name={'home'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.home'
