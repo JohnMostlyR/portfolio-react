@@ -13,7 +13,7 @@ const Bubble = styled.div`
   font-family: ${baseFontStackSerif}
   padding: .5em;
 
-  @media (min-height: ${em('750px')} {
+  @media (min-height: 750px) {
     margin-right: 0;
     border-bottom-left-radius: ${props => (props.isLeftHanded) ? 0 : '.5rem'};
     border-bottom-right-radius: ${props => (props.isLeftHanded) ? '.5rem' : 0};
