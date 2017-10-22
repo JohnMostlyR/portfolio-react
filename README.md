@@ -34,7 +34,8 @@ As CMS I use [contentful](https://www.contentful.com/)
 
 ### Other
 
-To be able to use I had to eject from Create React App as the timing function used by Snap.svg, mina, needs to be globally loaded. Therefore a webpack modification is needed.
+To be able to use Snap.svg, I had to eject from Create React App as the timing function used by Snap.svg, mina, needs to
+ be globally loaded. Therefore a webpack modification is needed.
 Still, Snap.svg is the best free package for this task, especially for morphing as this is quite a complex task.
 
 ### Reads
