@@ -24,7 +24,7 @@ const language = (navigator.languages && navigator.languages[0])
     || navigator.language
     || navigator.userLanguage;
 
-const usersLocale = language.substr(0, 2);
+const usersLocale = language.substr(0, 2) || 'en';
 
 // Try full locale, try locale without region code, fallback to 'en'
 const translationsForUsersLocale = localeData[usersLocale]

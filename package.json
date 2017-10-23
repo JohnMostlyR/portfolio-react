@@ -73,7 +73,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "test:coverage": "npm test -- --coverage",
     "test:snapshot": "npm test -- --u",
-    "build:langs": "cross-env NODE_ENV='development' node ./utils/default-lang.js"
+    "build:langs": "cross-env NODE_ENV='development' node ./src/utils/default-lang.js"
   },
   "devDependencies": {
     "babel-plugin-react-intl": "^2.3.1",
