@@ -7,6 +7,7 @@ import typography, {baseFontRegular} from '../../styles/templates/typography';
 import {svgToURL} from '../../styles/tools';
 
 const InputGroup = styled.div`
+  ${baseFontRegular}
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 1rem;
@@ -20,7 +21,6 @@ const InputGroup = styled.div`
 `;
 
 const Input = styled.input`
-  margin-bottom: .5rem;
   width: 100%;
   border: 0;
   border-bottom: 1px dotted;
@@ -75,7 +75,7 @@ const LabelContent = styled.span`
   top: 100%;
   transition: top .2s;
   
-  ${props => ((props.hasFocus) ? `top: -8px; font-size: 12px;` : '')}
+  ${props => ((props.hasFocus) ? `top: -16px; font-size: 12px;` : '')}
 `;
 
 const ErrorMessage = styled.span`
