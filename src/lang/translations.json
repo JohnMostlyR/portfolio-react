@@ -39,7 +39,7 @@
     "portfolio.page.skills.title": "MY SKILLS"
   },
   "nl": {
-    "portfolio.title": "Welkom",
+    "portfolio.title": "Welkom op mijn portfolio",
     "portfolio.page.contact.requirement.one": "Vul alstublieft alle velden in",
     "portfolio.page.contact.form_input.helper_text.range": "Moet tussen {minLength, number} en {maxLength, number} karakters zijn. Is nu: {count, number}",
     "portfolio.page.contact.form_input.helper_text.valid": "Bedankt!",

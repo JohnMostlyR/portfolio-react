@@ -25,4 +25,4 @@ yarn-error.log*
 /src/config.js
 
 # extrected default messages for Intl
-/src/lang/messages/
+/src/lang/messages
