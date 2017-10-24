@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bubble Should render and match the snapshot 1`] = `
+.c0 {
+  position: relative;
+  background-color: #F90;
+  border-radius: .5rem;
+  font-family: "Skolar Regular","Roboto Slab","Droid Serif",Cambria,Georgia,"Times New Roman",Times,serif;
+  padding: .5em;
+}
+
+@media (min-height:750px) {
+  .c0 {
+    margin-right: 0;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: 0;
+  }
+
+  .c0:after {
+    content: "";
+    height: 9vh;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 427.9 175.1 132.1' preserveAspectRatio='xMinYMid'%3E%3Cpath stroke='%23FFAD33' fill='%23FFAD33' d='M0 427.9l175.1 65.7-43.7-65.7z'/%3E%3Cpath fill='%23A36200' d='M175.1 493.6l-87.5 21.9v-54.8'/%3E%3Cpath fill='%23FFAD33' d='M87.6 515.5l21.2 44.5v-49.8'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

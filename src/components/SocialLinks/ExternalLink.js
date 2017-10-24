@@ -1,18 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import FontAwesome from 'react-fontawesome';
 
-import {visuallyHidden} from '../../styles/mixins';
-
-const StyledA = styled.a`
-  color: #575756;
-  text-decoration: none;
-`;
-
-const VisuallyHiddenSpan = styled.span`
-  ${visuallyHidden}
-`;
+import StyledA from './StyledA';
+import VisuallyHiddenSpan from './VisuallyHiddenSpan'
 
 const ExternalLink = (props) => (
     <StyledA href={props.href} target="_blank" rel="noopener noreferrer">
@@ -27,6 +18,7 @@ ExternalLink.propTypes = {
 };
 
 ExternalLink.defaultProps = {
+  faIcon: 'meh-o',
   description: 'ExternalLink to',
   href: '#',
 };

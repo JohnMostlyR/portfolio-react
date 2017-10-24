@@ -10,7 +10,7 @@ import localeData from '../../src/lang/translations.json';
 
 addLocaleData([...en, ...nl]);
 
-const createComponentWithIntl = (children, props = {locale: 'en', messages: localeData.nl}) => {
+const createComponentWithIntl = (children, props = {locale: 'en', messages: localeData.en}) => {
   return renderer.create(
       <IntlProvider {...props}>
         {children}

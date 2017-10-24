@@ -72,11 +72,8 @@ class App extends Component {
           <StyledMain fixedSiteNavOffset={this.state._siteNavIsFixedOffset}>
             <Switch>
               {routes.map((route, idx) => <Route key={idx} {...route} />)}
-              <Route exact path='/' render={() => (
-                  <Redirect to='/home'/>
-              )}/>
               <Route render={() => (
-                  <Redirect to='/home'/>
+                  <Redirect to='/'/>
               )}/>
             </Switch>
           </StyledMain>

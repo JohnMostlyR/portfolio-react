@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapper Should render and match the snapshot 1`] = `
+.c0 {
+  margin-bottom: 9vh;
+  padding: 1vh 1vw;
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.c0 .sc-bdVaJa p:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+@media (min-width:20em) {
+  .c0 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width:37.5rem) {
+  .c0 {
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width:63em) {
+  .c0 {
+    max-width: 63em;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
