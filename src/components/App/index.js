@@ -4,7 +4,6 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-import Helmet from 'react-helmet';
 import {defineMessages, injectIntl, intlShape} from 'react-intl';
 import styled from 'styled-components';
 
@@ -67,106 +66,6 @@ class App extends Component {
   render() {
     return (
         <Wrapper>
-          <Helmet
-              htmlAttributes={{lang: 'nl', amp: undefined}}
-              title={'Welkom op mijn portfolio website.'}
-              meta={[
-                {
-                  name: 'charset',
-                  content: 'utf8',
-                },
-                {
-                  name: 'viewport',
-                  content: 'width=device-width, initial-scale=1',
-                },
-                {
-                  name: 'description',
-                  content: 'Dit is de portfolio website van Johan Meester, Front-End Developer, Amsterdam. Kom meer over mij en mijn vaardigheden te weten en bekijk de projecten die ik heb gebouwd. Voor meer informatie neem alstublieft contact met mij op door het invullen van het contact formulier en/of find mij op websites als LinkedIn of Github, om er maar een paar te noemen.',
-                },
-                {
-                  property: 'og:locale',
-                  content: 'nl_NL',
-                },
-                {
-                  property: 'og:locale:alternate',
-                  content: 'en_GB',
-                },
-                {
-                  property: 'og:locale:alternate',
-                  content: 'en_US',
-                },
-                {
-                  property: 'og:type',
-                  content: 'website',
-                },
-                {
-                  property: 'og:title',
-                  content: 'Welkom op Johan Meester zijn portfolio website.',
-                },
-                {
-                  property: 'og:description',
-                  content: 'Dit is de portfolio website van Johan Meester, Front-End Developer, Amsterdam. Kom meer over mij en mijn vaardigheden te weten en bekijk de projecten die ik heb gebouwd. Voor meer informatie neem alstublieft contact met mij op door het invullen van het contact formulier en/of find mij op websites als LinkedIn of Github, om er maar een paar te noemen.',
-                },
-                {
-                  property: 'og:url',
-                  content: 'https://meester-johan.info/',
-                },
-                {
-                  property: 'og:site_name',
-                  content: 'Johan Meester zijn portfolio website',
-                },
-                {
-                  property: 'og:image',
-                  content: 'android-chrome-512x512.png',
-                },
-                {
-                  name: 'theme-color',
-                  content: '#ffffff',
-                },
-              ]}
-              link={[
-                {
-                  rel: 'stylesheet',
-                  href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-                },
-                {
-                  rel: 'shortcut icon',
-                  href: 'favicon.ico',
-                },
-                {
-                  rel: 'apple-touch-icon',
-                  sizes: '180x180',
-                  href: 'apple-touch-icon.png',
-                },
-                {
-                  rel: 'icon',
-                  type: 'image/png',
-                  sizes: '32x32',
-                  href: 'favicon-32x32.png',
-                },
-                {
-                  rel: 'icon',
-                  type: 'image/png',
-                  sizes: '16x16',
-                  href: 'favicon-16x16.png',
-                },
-                {
-                  rel: 'manifest',
-                  href: 'manifest.json',
-                },
-                {
-                  rel: 'mask-icon',
-                  color: '#5bbad5',
-                  href: 'safari-pinned-tab.svg',
-                },
-              ]}
-              script={[
-                {
-                  type: "text/javascript",
-                  innerHTML: "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PLVWW9F');"
-                }
-              ]}
-          />
           <H1>{this.props.intl.formatMessage(messages.title)}</H1>
           <SiteHeader setSiteNavIsFixedOffset={this.setSiteNavIsFixedOffset}/>
 

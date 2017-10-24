@@ -122,7 +122,7 @@ const Description = styled.span`
 const NavigationItems = (props, context) => (
     <StyledUL>
       <StyledLI>
-        <SiteNavLink to={'/home'} data-isactive={context.router.route.location.pathname === '/home'}>
+        <SiteNavLink to={'/'} data-isactive={context.router.route.location.pathname === '/'}>
           <SiteNavigationIcon name={'home'} fixedWidth/>
           <Description>
             <FormattedMessage id='portfolio.nav.home'

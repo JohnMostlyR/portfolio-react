@@ -15,32 +15,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.json()); // for parsing application/json
 
-app.get('/home', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'home.html'))
-));
-
-app.get('/about', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'about.html'))
-));
-
-app.get('/skills', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'skills.html'))
-));
-
-app.get('/projects', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'projects.html'))
-));
-
-app.get('/contact', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'contact.html'))
-));
-
-app.get('/', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'home.html'))
-));
-
 app.get('*', (req, res) => (
-    res.sendFile(path.join(__dirname, 'build', 'home.html'))
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 ));
 
 app.post('/contact-request', (req, res) => {

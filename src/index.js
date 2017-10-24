@@ -1,6 +1,5 @@
 import React from 'react';
-// import {hydrate} from 'react-dom';
-import { render } from 'react-snapshot';
+import {hydrate} from 'react-dom';
 import {IntlProvider, addLocaleData} from 'react-intl';
 import {BrowserRouter as Router} from 'react-router-dom';
 import App from './components/App';
@@ -108,7 +107,7 @@ injectGlobal`
   `}
 `;
 
-render(
+hydrate(
     <IntlProvider locale={usersLocale} messages={translationsForUsersLocale}>
       <Router>
         <App/>
