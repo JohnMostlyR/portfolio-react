@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapper Should render and match the snapshot 1`] = `
+.c0 {
+  border-bottom: .5vh solid #575756;
+}
+
+.c0:after {
+  content: "" !important;
+  display: block !important;
+  clear: both !important;
+}
+
+<div
+  className="c0"
+/>
+`;
