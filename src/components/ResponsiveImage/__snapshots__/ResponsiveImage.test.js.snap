@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponsiveImage Should render and match the snapshot 1`] = `
+<div
+  className="sc-bwzfXH uTxCW sc-bdVaJa foCoAy"
+>
+  <img
+    alt={undefined}
+    src={undefined}
+  />
+</div>
+`;
