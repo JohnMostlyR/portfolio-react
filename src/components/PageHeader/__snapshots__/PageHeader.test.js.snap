@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader Should render and match the snapshot 1`] = `
+<header
+  className="sc-bdVaJa hJvvcP"
+>
+  <div
+    className="sc-htpNat hRIAGI"
+  >
+    <h2
+      className="sc-bwzfXH iinwBk"
+    />
+  </div>
+</header>
+`;
