@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import mq from '../../styles/templates/mediaQueries';
 import ResponsiveImage from '../ResponsiveImage';
 
-const Figure = styled.figure`
+export const Figure = styled.figure`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ const Body = styled.div`
   padding: 1vw;
 `;
 
-const ImageWrapper = ResponsiveImage.extend`
+export const ImageWrapper = ResponsiveImage.extend`
   width: 13.75rem;
   border-radius: .5rem;
 

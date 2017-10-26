@@ -42,9 +42,10 @@ describe('Media', () => {
       reverse: true,
       spacing: '10px',
     };
+
     wrapper.setProps(optionalProps);
-    const mediaImage = wrapper.find(MediaImage);
-    const updatedProps = mediaImage.props();
+
+    const updatedProps = wrapper.find(MediaImage).props();
 
     Object.keys(optionalProps).forEach((prop) => {
       expect(updatedProps[prop]).not.toBe(mediaImageProps[prop]);
