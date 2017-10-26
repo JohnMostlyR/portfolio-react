@@ -6,6 +6,11 @@ import ContactPage from './pages/contact';
 
 const routes = [
   {
+    path: '/',
+    exact: true,
+    component: HomePage,
+  },
+  {
     path: '/about',
     component: AboutPage,
   },
@@ -20,11 +25,6 @@ const routes = [
   {
     path: '/contact',
     component: ContactPage,
-  },
-  {
-    path: '/',
-    exact: true,
-    component: HomePage,
   },
 ];
 
