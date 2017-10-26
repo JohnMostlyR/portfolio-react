@@ -1,5 +1,5 @@
 import React from 'react';
-import {defineMessages, injectIntl} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 import styled from 'styled-components';
 import {rem} from 'polished';
 
@@ -8,13 +8,6 @@ import SiteHeader from '../SiteHeader';
 import mq from '../../styles/templates/mediaQueries';
 import {visuallyHidden} from '../../styles/mixins';
 import {svgToURL} from '../../styles/tools';
-
-const messages = defineMessages({
-  title: {
-    id: 'portfolio.title',
-    defaultMessage: 'Welcome to my portfolio',
-  },
-});
 
 const Wrapper = styled.div`
   display: flex;
@@ -73,7 +66,7 @@ class Layout extends React.Component {
     return (
         <Wrapper>
           {globalStyles()}
-          <H1>{this.props.intl.formatMessage(messages.title)}</H1>
+          <H1><FormattedMessage id={'portfolio.title'} defaultMessage={'Welcome to my portfolio'}/></H1>
           <SiteHeader setSiteNavIsFixedOffset={this.setSiteNavIsFixedOffset} />
 
           <StyledMain fixedSiteNavOffset={this.state._siteNavIsFixedOffset}>
@@ -87,4 +80,4 @@ class Layout extends React.Component {
   }
 }
 
-export default injectIntl(Layout);
+export default Layout;
