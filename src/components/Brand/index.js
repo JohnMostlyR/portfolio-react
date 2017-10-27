@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {rem} from 'polished';
 
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   padding: 1vh 0 0 1vw;
 `;
 
-const BrandLink = styled.a.attrs({
+export const BrandLink = styled.a.attrs({
   href: props => props.href || '#',
 })`
   display: inline-block;
@@ -23,19 +24,31 @@ const BrandLink = styled.a.attrs({
   ${typography.minion}
 `;
 
-const Brand = (props) => (
+const Brand = ({href, imageSource, text}) => (
   <Wrapper>
-    <BrandLink href={'/intro'}>
+    <BrandLink href={href}>
       <Media
         bodyAlign='middle'
-        imageSource={MyLogo}
+        imageSource={imageSource}
         imageAlt='logo'
         imageAlign='middle'
         imageHeight='45px'
         imageWidth='45px'
-      >JOHAN MEESTER</Media>
+      >{text}</Media>
     </BrandLink>
   </Wrapper>
 );
+
+Brand.propTypes = {
+  href: PropTypes.string,
+  imageSource: PropTypes.string,
+  text: PropTypes.string,
+};
+
+Brand.defaultProps = {
+  href: '/',
+  imageSource: MyLogo,
+  text: 'JOHAN MEESTER',
+};
 
 export default Brand;

@@ -21,7 +21,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <styled.div>
-          <Brand />
+          <Brand
+                    href="/"
+                    imageSource="my-logo.svg"
+                    text="JOHAN MEESTER"
+          />
           <Unknown />
 </styled.div>,
         <Unknown
@@ -38,7 +42,11 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Brand />,
+            <Brand
+              href="/"
+              imageSource="my-logo.svg"
+              text="JOHAN MEESTER"
+/>,
             <Unknown />,
           ],
         },
@@ -48,7 +56,11 @@ ShallowWrapper {
             "instance": null,
             "key": null,
             "nodeType": "function",
-            "props": Object {},
+            "props": Object {
+              "href": "/",
+              "imageSource": "my-logo.svg",
+              "text": "JOHAN MEESTER",
+            },
             "ref": null,
             "rendered": null,
             "type": [Function],
@@ -87,7 +99,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <styled.div>
-            <Brand />
+            <Brand
+                        href="/"
+                        imageSource="my-logo.svg"
+                        text="JOHAN MEESTER"
+            />
             <Unknown />
 </styled.div>,
           <Unknown
@@ -104,7 +120,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <Brand />,
+              <Brand
+                href="/"
+                imageSource="my-logo.svg"
+                text="JOHAN MEESTER"
+/>,
               <Unknown />,
             ],
           },
@@ -114,7 +134,11 @@ ShallowWrapper {
               "instance": null,
               "key": null,
               "nodeType": "function",
-              "props": Object {},
+              "props": Object {
+                "href": "/",
+                "imageSource": "my-logo.svg",
+                "text": "JOHAN MEESTER",
+              },
               "ref": null,
               "rendered": null,
               "type": [Function],
@@ -162,7 +186,7 @@ ShallowWrapper {
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "x0xn0h",
+            "key": "dfixqz",
             "pathname": "/",
             "search": "",
           },
@@ -172,7 +196,7 @@ ShallowWrapper {
         "route": Object {
           "location": Object {
             "hash": "",
-            "key": "x0xn0h",
+            "key": "dfixqz",
             "pathname": "/",
             "search": "",
           },
