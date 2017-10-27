@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {FormattedMessage, injectIntl} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import StyledUL from './StyledUL';
 import StyledLI from './StyledLI';
@@ -8,7 +8,8 @@ import SiteNavLink from './SiteNavLink';
 import SiteNavigationIcon from './SiteNavigationIcon';
 import Description from './Description';
 
-const NavigationItems = (props, context) => (
+const NavigationItems = (props, context) => {
+  return (
     <StyledUL>
       <StyledLI>
         <SiteNavLink to={'/'} data-isactive={context.router.route.location.pathname === '/'}>
@@ -65,10 +66,11 @@ const NavigationItems = (props, context) => (
         </SiteNavLink>
       </StyledLI>
     </StyledUL>
-);
+  )
+};
 
 NavigationItems.contextTypes = {
   router: PropTypes.object,
 };
 
-export default injectIntl(NavigationItems);
+export default NavigationItems;

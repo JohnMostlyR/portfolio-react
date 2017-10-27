@@ -28,7 +28,7 @@ ShallowWrapper {
           />
           <Unknown />
 </styled.div>,
-        <Unknown
+        <SiteNavigationBar
           setSiteNavIsFixedOffset={[Function]}
 />,
       ],
@@ -80,7 +80,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": null,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "setSiteNavIsFixedOffset": [Function],
         },
@@ -106,7 +106,7 @@ ShallowWrapper {
             />
             <Unknown />
 </styled.div>,
-          <Unknown
+          <SiteNavigationBar
             setSiteNavIsFixedOffset={[Function]}
 />,
         ],
@@ -158,7 +158,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": null,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "setSiteNavIsFixedOffset": [Function],
           },
@@ -186,7 +186,7 @@ ShallowWrapper {
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "dfixqz",
+            "key": "hik343",
             "pathname": "/",
             "search": "",
           },
@@ -196,7 +196,7 @@ ShallowWrapper {
         "route": Object {
           "location": Object {
             "hash": "",
-            "key": "dfixqz",
+            "key": "hik343",
             "pathname": "/",
             "search": "",
           },

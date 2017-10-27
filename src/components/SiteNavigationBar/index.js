@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {FormattedMessage, injectIntl} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import NavigationItems from './NavigationItems';
 import SiteNavigation from './SiteNavigation';
 import H2 from './H2';
+
+import getElementTop from '../../utils/getElementTop';
 
 class SiteNavigationBar extends Component {
   static propTypes = {
@@ -20,18 +22,6 @@ class SiteNavigationBar extends Component {
       _isScrolling: 0,
     };
   }
-
-  _getElementTop = (element) => {
-    let actualTop = element.offsetTop;
-    let currentParent = element.offsetParent;
-
-    while (currentParent !== null) {
-      actualTop += currentParent.offsetTop;
-      currentParent = currentParent.offsetParent;
-    }
-
-    return actualTop;
-  };
 
   handleScrollEvent = (ev) => {
     if (this.state._isScrolling) {
@@ -62,7 +52,7 @@ class SiteNavigationBar extends Component {
 
   componentDidMount() {
     this.setState({
-      _myTopPosition: this._getElementTop(this.siteNavigation),
+      _myTopPosition: getElementTop(this.siteNavigation),
     });
 
     document.addEventListener('scroll', this.handleScrollEvent);
@@ -83,4 +73,4 @@ class SiteNavigationBar extends Component {
   }
 }
 
-export default injectIntl(SiteNavigationBar);
+export default SiteNavigationBar;
