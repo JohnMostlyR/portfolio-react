@@ -30,7 +30,7 @@ const ProjectLinksList = (props) => (
 );
 
 ProjectLinksList.propTypes = {
-  links: PropTypes.array,
+  links: PropTypes.array.isRequired,
 };
 
 export default ProjectLinksList;
