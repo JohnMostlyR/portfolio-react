@@ -2,11 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import H2 from './H2';
+import Wrapper from '../Wrapper';
 
-describe('H2', () => {
+describe('Wrapper', () => {
   it('Should render and match the snapshot', () => {
-    const tree = renderer.create(<H2/>).toJSON();
+    const tree = renderer.create(<Wrapper/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

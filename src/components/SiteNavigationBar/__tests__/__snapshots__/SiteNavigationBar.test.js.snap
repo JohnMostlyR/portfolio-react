@@ -1,0 +1,747 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SiteNavigationBar should act when top of the screen is reached 1`] = `
+<SiteNavigationBar
+  setSiteNavIsFixedOffset={[Function]}
+  siteNavIsAtScreenTop={true}
+>
+  <styled.nav
+    innerRef={[Function]}
+    isAtScreenTop={true}
+  >
+    <nav
+      className="sc-EHOje jBrOTl"
+    >
+      <styled.h2>
+        <h2
+          className="sc-bZQynM pCdmS"
+        >
+          <FormattedMessage
+            defaultMessage="Site navigation"
+            id="portfolio.nav.header"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Site navigation"
+                id="portfolio.nav.header"
+                values={Object {}}
+              >
+                <span>
+                  Site navigation
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </h2>
+      </styled.h2>
+      <styled.ul>
+        <ul
+          className="sc-bdVaJa hHvDrO"
+        >
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={true}
+                to="/"
+              >
+                <Link
+                  className="sc-htpNat zgiCp"
+                  data-isactive={true}
+                  replace={false}
+                  to="/"
+                >
+                  <a
+                    className="sc-htpNat zgiCp"
+                    data-isactive={true}
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="home"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="home"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-home fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Intro"
+                          id="portfolio.nav.home"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Intro"
+                              id="portfolio.nav.home"
+                              values={Object {}}
+                            >
+                              <span>
+                                Intro
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/about"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/about"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/about"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="address-card"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="address-card"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-address-card fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="About"
+                          id="portfolio.nav.about"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="About"
+                              id="portfolio.nav.about"
+                              values={Object {}}
+                            >
+                              <span>
+                                About
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/skills"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/skills"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/skills"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="code"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="code"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-code fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Skills"
+                          id="portfolio.nav.skills"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Skills"
+                              id="portfolio.nav.skills"
+                              values={Object {}}
+                            >
+                              <span>
+                                Skills
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/projects"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/projects"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/projects"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="list"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="list"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-list fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Projects"
+                          id="portfolio.nav.projects"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Projects"
+                              id="portfolio.nav.projects"
+                              values={Object {}}
+                            >
+                              <span>
+                                Projects
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/contact"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/contact"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/contact"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="send"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="send"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-send fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Contact"
+                          id="portfolio.nav.contact"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Contact"
+                              id="portfolio.nav.contact"
+                              values={Object {}}
+                            >
+                              <span>
+                                Contact
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+        </ul>
+      </styled.ul>
+    </nav>
+  </styled.nav>
+</SiteNavigationBar>
+`;
+
+exports[`SiteNavigationBar should render and match the snapshot 1`] = `
+<SiteNavigationBar
+  setSiteNavIsFixedOffset={[Function]}
+  siteNavIsAtScreenTop={false}
+>
+  <styled.nav
+    innerRef={[Function]}
+    isAtScreenTop={false}
+  >
+    <nav
+      className="sc-EHOje ejgrxl"
+    >
+      <styled.h2>
+        <h2
+          className="sc-bZQynM pCdmS"
+        >
+          <FormattedMessage
+            defaultMessage="Site navigation"
+            id="portfolio.nav.header"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Site navigation"
+                id="portfolio.nav.header"
+                values={Object {}}
+              >
+                <span>
+                  Site navigation
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </h2>
+      </styled.h2>
+      <styled.ul>
+        <ul
+          className="sc-bdVaJa hHvDrO"
+        >
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={true}
+                to="/"
+              >
+                <Link
+                  className="sc-htpNat zgiCp"
+                  data-isactive={true}
+                  replace={false}
+                  to="/"
+                >
+                  <a
+                    className="sc-htpNat zgiCp"
+                    data-isactive={true}
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="home"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="home"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-home fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Intro"
+                          id="portfolio.nav.home"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Intro"
+                              id="portfolio.nav.home"
+                              values={Object {}}
+                            >
+                              <span>
+                                Intro
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/about"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/about"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/about"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="address-card"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="address-card"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-address-card fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="About"
+                          id="portfolio.nav.about"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="About"
+                              id="portfolio.nav.about"
+                              values={Object {}}
+                            >
+                              <span>
+                                About
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/skills"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/skills"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/skills"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="code"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="code"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-code fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Skills"
+                          id="portfolio.nav.skills"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Skills"
+                              id="portfolio.nav.skills"
+                              values={Object {}}
+                            >
+                              <span>
+                                Skills
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/projects"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/projects"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/projects"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="list"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="list"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-list fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Projects"
+                          id="portfolio.nav.projects"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Projects"
+                              id="portfolio.nav.projects"
+                              values={Object {}}
+                            >
+                              <span>
+                                Projects
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+          <styled.li>
+            <li
+              className="sc-bwzfXH kiBDtw"
+            >
+              <Styled(Link)
+                data-isactive={false}
+                to="/contact"
+              >
+                <Link
+                  className="sc-htpNat ipIhTO"
+                  data-isactive={false}
+                  replace={false}
+                  to="/contact"
+                >
+                  <a
+                    className="sc-htpNat ipIhTO"
+                    data-isactive={false}
+                    href="/contact"
+                    onClick={[Function]}
+                  >
+                    <Styled(FontAwesome)
+                      fixedWidth={true}
+                      name="send"
+                    >
+                      <FontAwesome
+                        className="sc-bxivhb jYHDuC"
+                        fixedWidth={true}
+                        name="send"
+                      >
+                        <span
+                          aria-hidden={true}
+                          className="fa fa-send fa-fw sc-bxivhb jYHDuC"
+                        />
+                      </FontAwesome>
+                    </Styled(FontAwesome)>
+                    <styled.span>
+                      <span
+                        className="sc-ifAKCX kiQsQu"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Contact"
+                          id="portfolio.nav.contact"
+                        >
+                          <IntlProvider
+                            defaultLocale="en"
+                            locale="en"
+                          >
+                            <FormattedMessage
+                              defaultMessage="Contact"
+                              id="portfolio.nav.contact"
+                              values={Object {}}
+                            >
+                              <span>
+                                Contact
+                              </span>
+                            </FormattedMessage>
+                          </IntlProvider>
+                        </FormattedMessage>
+                      </span>
+                    </styled.span>
+                  </a>
+                </Link>
+              </Styled(Link)>
+            </li>
+          </styled.li>
+        </ul>
+      </styled.ul>
+    </nav>
+  </styled.nav>
+</SiteNavigationBar>
+`;

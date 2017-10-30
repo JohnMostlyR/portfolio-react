@@ -8,18 +8,19 @@ import Brand from '../Brand';
 import SiteNavigation from '../SiteNavigationBar';
 import SocialLinks from '../SocialLinks';
 
-const SiteHeader = ({setSiteNavIsFixedOffset}) => (
+const SiteHeader = ({setSiteNavIsFixedOffset, siteNavIsAtScreenTop}) => (
     <Header role="banner">
       <Wrapper>
         <Brand/>
         <SocialLinks/>
       </Wrapper>
-      <SiteNavigation setSiteNavIsFixedOffset={setSiteNavIsFixedOffset}/>
+      <SiteNavigation setSiteNavIsFixedOffset={setSiteNavIsFixedOffset} siteNavIsAtScreenTop={siteNavIsAtScreenTop}/>
     </Header>
 );
 
 SiteHeader.propTypes = {
   setSiteNavIsFixedOffset: PropTypes.func.isRequired,
+  siteNavIsAtScreenTop: PropTypes.bool,
 };
 
 export default SiteHeader;

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {
   Route,
   Switch,
@@ -51,25 +52,74 @@ class App extends Component {
     intl: intlShape.isRequired,
   };
 
-  state = {
-    _siteNavIsFixedOffset: 0,
+  static childContextTypes = {
+    scrollTop: PropTypes.number,
   };
 
-  setSiteNavIsFixedOffset = (siteNavIsFixedOffset) => {
-    if (typeof siteNavIsFixedOffset !== 'number') return;
+  state = {
+    _scrollTop: 0,
+    _isScrolling: 0,
+    _siteNavIsAtScreenTop: false,
+    _siteNavIsFixedOffset: 0,
+    _siteNavigationTopPosition: 0,
+  };
+
+  handleScrollEvent = (ev) => {
+    if (this.state._isScrolling) {
+      return;
+    }
+
+    if (ev.target && 'scrollingElement' in ev.target) {
+      let debounce = setTimeout(() => {
+        const isAtScreenTop = (ev.target.scrollingElement.scrollTop >=
+            this.state._siteNavigationTopPosition)
+            ? true
+            : false;
+
+        this.setState({
+          _siteNavIsAtScreenTop: isAtScreenTop,
+          _isScrolling: 0,
+        });
+      }, 0);
+
+      this.setState({
+        _isScrolling: debounce,
+      });
+    }
+  };
+
+  componentDidMount() {
+    this.wrapper.ownerDocument.addEventListener('scroll', this.handleScrollEvent);
+  }
+
+  componentWillUnmount() {
+    this.wrapper.ownerDocument.removeEventListener('scroll', this.handleScrollEvent);
+  }
+
+  getChildContext() {
+    return {
+      scrollTop: this.state._scrollTop,
+    };
+  }
+
+  setSiteNavIsFixedOffset = ({siteNavigationTopPosition, siteNavigationOffsetHeight}) => {
+    if (typeof siteNavigationTopPosition !== 'number') return;
+    if (typeof siteNavigationOffsetHeight !== 'number') return;
 
     this.setState({
-      _siteNavIsFixedOffset: siteNavIsFixedOffset,
+      _siteNavigationTopPosition: siteNavigationTopPosition,
+      _siteNavIsFixedOffset: siteNavigationOffsetHeight,
     });
   };
 
   render() {
     return (
-        <Wrapper>
+        <Wrapper innerRef={el => this.wrapper = el}>
           <H1>{this.props.intl.formatMessage(messages.title)}</H1>
-          <SiteHeader setSiteNavIsFixedOffset={this.setSiteNavIsFixedOffset}/>
+          <SiteHeader setSiteNavIsFixedOffset={this.setSiteNavIsFixedOffset}
+                      siteNavIsAtScreenTop={this.state._siteNavIsAtScreenTop}/>
 
-          <StyledMain fixedSiteNavOffset={this.state._siteNavIsFixedOffset}>
+          <StyledMain fixedSiteNavOffset={(_siteNavIsAtScreenTop) => this.state._siteNavIsFixedOffset}>
             <Switch>
               {routes.map((route, idx) => <Route key={idx} {...route} />)}
               <Route render={() => (
