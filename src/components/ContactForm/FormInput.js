@@ -20,7 +20,7 @@ const InputGroup = styled.div`
   }
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   width: 100%;
   border: 0;
   border-bottom: 1px dotted;
@@ -45,7 +45,7 @@ const Input = styled.input`
   `}
 `;
 
-const Textarea = Input.withComponent('textarea').extend`
+export const Textarea = Input.withComponent('textarea').extend`
   ${baseFontRegular}
   ${typography.bodyCopy}
   appearance: none;
@@ -151,7 +151,7 @@ class FormInput extends Component {
     this.setState({_hasFocus: true,});
   };
 
-  setFocus = (ev) => {
+  setFocus = () => {
     if (this.inputElement) {
       this.inputElement.focus();
     } else if (this.textAreaElement) {

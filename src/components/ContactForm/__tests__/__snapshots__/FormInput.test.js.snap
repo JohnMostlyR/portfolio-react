@@ -1,0 +1,1108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput and then moves away from the field should show a message that the input is correct 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={false}
+  label="This is the label text"
+  maxLength={15}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus="This is valid"
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus="This is valid"
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.input
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="dummy"
+        value="This is valid"
+      >
+        <input
+          className="sc-bwzfXH dViZZy"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="dummy"
+          value="This is valid"
+        />
+      </styled.input>
+      <div>
+        <styled.span
+          showError={undefined}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            undefined 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <FormattedMessage
+              defaultMessage="Thanks!"
+              id="portfolio.page.contact.form_input.helper_text.valid"
+            >
+              <IntlProvider
+                defaultLocale="en"
+                locale="en"
+              >
+                <FormattedMessage
+                  defaultMessage="Thanks!"
+                  id="portfolio.page.contact.form_input.helper_text.valid"
+                  values={Object {}}
+                >
+                  <span>
+                    Thanks!
+                  </span>
+                </FormattedMessage>
+              </IntlProvider>
+            </FormattedMessage>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput and then moves away from the field should show an error message when the input is not correct 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={false}
+  label="This is the label text"
+  maxLength={15}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus=""
+          >
+            <span
+              className="sc-bZQynM kNIjCD"
+            >
+              This is the label text
+              <styled.span
+                hasFocus=""
+              >
+                <span
+                  className="sc-EHOje jzGrCy"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.input
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="dummy"
+        value=""
+      >
+        <input
+          className="sc-bwzfXH dViZZy"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="dummy"
+          value=""
+        />
+      </styled.input>
+      <div>
+        <styled.span
+          showError="Error, Error, Error"
+        >
+          <span
+            className="sc-gzVnrw laxHOg"
+          >
+            Error, Error, Error 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 0,
+                    "maxLength": 15,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 0,
+                        "maxLength": 15,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 15 characters. Is now: 0
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput should receive props 1`] = `
+<styled.div>
+  <styled.label
+    htmlFor="name"
+    onClick={[Function]}
+  >
+    <styled.span
+      hasFocus="The value"
+    >
+      This is the label text
+      <styled.span
+        hasFocus="The value"
+      >
+        <i>
+          This is the placeholder text
+        </i>
+      </styled.span>
+    </styled.span>
+  </styled.label>
+  <styled.textarea
+    innerRef={[Function]}
+    name="This is the input its name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "height": "",
+      }
+    }
+    value="The value"
+  />
+  <div>
+    <styled.span
+      showError={false}
+    >
+      false 
+    </styled.span>
+    <styled.span>
+      <FormattedMessage
+        defaultMessage="Thanks!"
+        id="portfolio.page.contact.form_input.helper_text.valid"
+      />
+    </styled.span>
+  </div>
+</styled.div>
+`;
+
+exports[`FormInput should render and match the snapshot 1`] = `
+<styled.div>
+  <styled.label
+    htmlFor="name"
+    onClick={[Function]}
+  >
+    <styled.span>
+      This is the label text
+      <styled.span>
+        <i />
+      </styled.span>
+    </styled.span>
+  </styled.label>
+  <styled.input
+    innerRef={[Function]}
+    name="This is the input its name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+  <div>
+    <styled.span
+      showError={false}
+    >
+      false 
+    </styled.span>
+    <styled.span />
+  </div>
+</styled.div>
+`;
+
+exports[`FormInput when a field has focus should act when a textarea is rendered 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={true}
+  label="This is the label text"
+  maxLength={15}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus={true}
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus={true}
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.textarea
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "height": "",
+          }
+        }
+        value="The value"
+      >
+        <textarea
+          className="sc-bxivhb bIGQKc"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          style={
+            Object {
+              "height": "",
+            }
+          }
+          value="The value"
+        />
+      </styled.textarea>
+      <div>
+        <styled.span
+          showError={false}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            false 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 9,
+                    "maxLength": 15,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 9,
+                        "maxLength": 15,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 15 characters. Is now: 9
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput when a field has focus should act when an input field is rendered 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={false}
+  label="This is the label text"
+  maxLength={15}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus={true}
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus={true}
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.input
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="dummy"
+        value="The value"
+      >
+        <input
+          className="sc-bwzfXH dViZZy"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="dummy"
+          value="The value"
+        />
+      </styled.input>
+      <div>
+        <styled.span
+          showError={false}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            false 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 9,
+                    "maxLength": 15,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 9,
+                        "maxLength": 15,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 15 characters. Is now: 9
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput when a user populates the input field should not show any errors as long as the field has the focus 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={false}
+  label="This is the label text"
+  maxLength={15}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus={true}
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus={true}
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.input
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="dummy"
+        value="testing123"
+      >
+        <input
+          className="sc-bwzfXH dViZZy"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="dummy"
+          value="testing123"
+        />
+      </styled.input>
+      <div>
+        <styled.span
+          showError={false}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            Error message. 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 10,
+                    "maxLength": 15,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 10,
+                        "maxLength": 15,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 15 characters. Is now: 10
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput when a user populates the input field should update the helper text, when available 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={false}
+  label="This is the label text"
+  maxLength={15}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus={true}
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus={true}
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.input
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="dummy"
+        value="testing123"
+      >
+        <input
+          className="sc-bwzfXH dViZZy"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="dummy"
+          value="testing123"
+        />
+      </styled.input>
+      <div>
+        <styled.span
+          showError={false}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            false 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 10,
+                    "maxLength": 15,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 10,
+                        "maxLength": 15,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 15 characters. Is now: 10
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput when a user populates the textarea should not show any errors as long as the field has the focus 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={true}
+  label="This is the label text"
+  maxLength={300}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus={true}
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus={true}
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.textarea
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+        value="testing123
+      testing
+      testing
+      123"
+      >
+        <textarea
+          className="sc-bxivhb bIGQKc"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+          value="testing123
+        testing
+        testing
+        123"
+        />
+      </styled.textarea>
+      <div>
+        <styled.span
+          showError={false}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            Error message. 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 30,
+                    "maxLength": 300,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 30,
+                        "maxLength": 300,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 300 characters. Is now: 30
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
+
+exports[`FormInput when a user populates the textarea should update the helper text, when available 1`] = `
+<FormInput
+  helperText="This is a helper text"
+  inputType="dummy"
+  isTextArea={true}
+  label="This is the label text"
+  maxLength={300}
+  minLength={1}
+  name="This is the input its name"
+  onChange={[Function]}
+  placeholder="This is the placeholder text"
+  validate={[Function]}
+  value="The value"
+>
+  <styled.div>
+    <div
+      className="sc-bdVaJa RMGlR"
+    >
+      <styled.label
+        htmlFor="name"
+        onClick={[Function]}
+      >
+        <label
+          className="sc-ifAKCX jZZVKT"
+          htmlFor="name"
+          onClick={[Function]}
+        >
+          <styled.span
+            hasFocus={true}
+          >
+            <span
+              className="sc-bZQynM kZfPom"
+            >
+              This is the label text
+              <styled.span
+                hasFocus={true}
+              >
+                <span
+                  className="sc-EHOje jMKoyM"
+                >
+                  <i>
+                    This is the placeholder text
+                  </i>
+                </span>
+              </styled.span>
+            </span>
+          </styled.span>
+        </label>
+      </styled.label>
+      <styled.textarea
+        innerRef={[Function]}
+        name="This is the input its name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "height": 0,
+          }
+        }
+        value="testing123
+      testing
+      testing
+      123"
+      >
+        <textarea
+          className="sc-bxivhb bIGQKc"
+          name="This is the input its name"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          style={
+            Object {
+              "height": 0,
+            }
+          }
+          value="testing123
+        testing
+        testing
+        123"
+        />
+      </styled.textarea>
+      <div>
+        <styled.span
+          showError={false}
+        >
+          <span
+            className="sc-gzVnrw ghfcQg"
+          >
+            false 
+          </span>
+        </styled.span>
+        <styled.span>
+          <span
+            className="sc-htoDjs bVWJue"
+          >
+            <span>
+              This is a helper text
+               
+              <FormattedMessage
+                defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                id="portfolio.page.contact.form_input.helper_text.range"
+                values={
+                  Object {
+                    "count": 30,
+                    "maxLength": 300,
+                    "minLength": 1,
+                  }
+                }
+              >
+                <IntlProvider
+                  defaultLocale="en"
+                  locale="en"
+                >
+                  <FormattedMessage
+                    defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                    id="portfolio.page.contact.form_input.helper_text.range"
+                    values={
+                      Object {
+                        "count": 30,
+                        "maxLength": 300,
+                        "minLength": 1,
+                      }
+                    }
+                  >
+                    <span>
+                      Should be between 1 and 300 characters. Is now: 30
+                    </span>
+                  </FormattedMessage>
+                </IntlProvider>
+              </FormattedMessage>
+            </span>
+          </span>
+        </styled.span>
+      </div>
+    </div>
+  </styled.div>
+</FormInput>
+`;
