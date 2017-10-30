@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInfo should render and match the snapshot 1`] = `
+<styled.div>
+  <styled.ul>
+    <li>
+      <FontAwesome
+        name="info-circle"
+      />
+       
+      <span>
+        <FormattedMessage
+          defaultMessage="Please fill in all fields"
+          id="portfolio.page.contact.requirement.one"
+        />
+      </span>
+    </li>
+  </styled.ul>
+</styled.div>
+`;

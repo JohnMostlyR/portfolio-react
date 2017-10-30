@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl, FormattedMessage} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 import styled from 'styled-components';
 import mq from '../../styles/templates/mediaQueries';
 import typography, {baseFontRegular} from '../../styles/templates/typography';
@@ -240,4 +240,4 @@ class FormInput extends Component {
   }
 }
 
-export default injectIntl(FormInput);
+export default FormInput;
