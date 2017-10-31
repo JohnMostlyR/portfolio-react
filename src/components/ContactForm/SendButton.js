@@ -80,7 +80,7 @@ const messages = {
   'error': <FormattedMessage id={'send_button.error'} defaultMessage={'Failed. Please try again'}/>,
 };
 
-const SendButton = ({intl, disabled, buttonState}) => (
+const SendButton = ({disabled, buttonState}) => (
     <Button disabled={disabled}>
       <span><ButtonIcon name={'paper-plane'}/><span>{messages[buttonState]}</span></span>
     </Button>
@@ -88,7 +88,7 @@ const SendButton = ({intl, disabled, buttonState}) => (
 
 SendButton.propTypes = {
   disabled: PropTypes.bool,
-  buttonState: PropTypes.oneOf(['idle', 'sending', 'success', 'error']).isRequired,
+  buttonState: PropTypes.oneOf(['idle', 'sending', 'success', 'error']),
 };
 
 SendButton.defaultProps = {

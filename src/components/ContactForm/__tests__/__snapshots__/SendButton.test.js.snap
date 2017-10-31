@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendButton should render and match the snapshot 1`] = `
+<SendButton
+  buttonState="idle"
+  disabled={true}
+>
+  <styled.button
+    disabled={true}
+  >
+    <button
+      className="sc-bdVaJa iFebLj"
+      disabled={true}
+    >
+      <span>
+        <Styled(FontAwesome)
+          name="paper-plane"
+        >
+          <FontAwesome
+            className="sc-bwzfXH hueGiT"
+            name="paper-plane"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-paper-plane sc-bwzfXH hueGiT"
+            />
+          </FontAwesome>
+        </Styled(FontAwesome)>
+        <span>
+          <FormattedMessage
+            defaultMessage="Send"
+            id="send_button.idle"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Send"
+                id="send_button.idle"
+                values={Object {}}
+              >
+                <span>
+                  Send
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </span>
+      </span>
+    </button>
+  </styled.button>
+</SendButton>
+`;
+
+exports[`SendButton should respond when set to \`enabled\` 1`] = `
+<SendButton
+  buttonState="idle"
+  disabled={false}
+>
+  <styled.button
+    disabled={false}
+  >
+    <button
+      className="sc-bdVaJa iFebLj"
+      disabled={false}
+    >
+      <span>
+        <Styled(FontAwesome)
+          name="paper-plane"
+        >
+          <FontAwesome
+            className="sc-bwzfXH hueGiT"
+            name="paper-plane"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-paper-plane sc-bwzfXH hueGiT"
+            />
+          </FontAwesome>
+        </Styled(FontAwesome)>
+        <span>
+          <FormattedMessage
+            defaultMessage="Send"
+            id="send_button.idle"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Send"
+                id="send_button.idle"
+                values={Object {}}
+              >
+                <span>
+                  Send
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </span>
+      </span>
+    </button>
+  </styled.button>
+</SendButton>
+`;
+
+exports[`SendButton when the \`state\` changes should change its appearance when state is \`error\` 1`] = `
+<SendButton
+  buttonState="error"
+  disabled={false}
+>
+  <styled.button
+    disabled={false}
+  >
+    <button
+      className="sc-bdVaJa iFebLj"
+      disabled={false}
+    >
+      <span>
+        <Styled(FontAwesome)
+          name="paper-plane"
+        >
+          <FontAwesome
+            className="sc-bwzfXH hueGiT"
+            name="paper-plane"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-paper-plane sc-bwzfXH hueGiT"
+            />
+          </FontAwesome>
+        </Styled(FontAwesome)>
+        <span>
+          <FormattedMessage
+            defaultMessage="Failed. Please try again"
+            id="send_button.error"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Failed. Please try again"
+                id="send_button.error"
+                values={Object {}}
+              >
+                <span>
+                  Failed. Please try again
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </span>
+      </span>
+    </button>
+  </styled.button>
+</SendButton>
+`;
+
+exports[`SendButton when the \`state\` changes should change its appearance when state is \`sending\` 1`] = `
+<SendButton
+  buttonState="sending"
+  disabled={false}
+>
+  <styled.button
+    disabled={false}
+  >
+    <button
+      className="sc-bdVaJa iFebLj"
+      disabled={false}
+    >
+      <span>
+        <Styled(FontAwesome)
+          name="paper-plane"
+        >
+          <FontAwesome
+            className="sc-bwzfXH hueGiT"
+            name="paper-plane"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-paper-plane sc-bwzfXH hueGiT"
+            />
+          </FontAwesome>
+        </Styled(FontAwesome)>
+        <span>
+          <FormattedMessage
+            defaultMessage="Sending..."
+            id="send_button.sending"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Sending..."
+                id="send_button.sending"
+                values={Object {}}
+              >
+                <span>
+                  Sending...
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </span>
+      </span>
+    </button>
+  </styled.button>
+</SendButton>
+`;
+
+exports[`SendButton when the \`state\` changes should change its appearance when state is \`success\` 1`] = `
+<SendButton
+  buttonState="success"
+  disabled={false}
+>
+  <styled.button
+    disabled={false}
+  >
+    <button
+      className="sc-bdVaJa iFebLj"
+      disabled={false}
+    >
+      <span>
+        <Styled(FontAwesome)
+          name="paper-plane"
+        >
+          <FontAwesome
+            className="sc-bwzfXH hueGiT"
+            name="paper-plane"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-paper-plane sc-bwzfXH hueGiT"
+            />
+          </FontAwesome>
+        </Styled(FontAwesome)>
+        <span>
+          <FormattedMessage
+            defaultMessage="Sent! I'll respond as soon as possible."
+            id="send_button.success"
+          >
+            <IntlProvider
+              defaultLocale="en"
+              locale="en"
+            >
+              <FormattedMessage
+                defaultMessage="Sent! I'll respond as soon as possible."
+                id="send_button.success"
+                values={Object {}}
+              >
+                <span>
+                  Sent! I'll respond as soon as possible.
+                </span>
+              </FormattedMessage>
+            </IntlProvider>
+          </FormattedMessage>
+        </span>
+      </span>
+    </button>
+  </styled.button>
+</SendButton>
+`;
