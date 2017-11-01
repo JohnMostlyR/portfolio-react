@@ -1,6 +1,8 @@
 import fetch from 'isomorphic-unfetch';
 import marked from 'marked';
 
+import {config} from '../../private';
+
 marked.options({
   breaks: true,
 });
@@ -8,9 +10,9 @@ marked.options({
 async function getFromContentful({contentType, select = 'fields', locale = 'en-US'} = {}) {
   locale = (locale === 'en') ? 'en-US' : locale;
 
-  const ENDPOINT = 'https://cdn.contentful.com/spaces/1tymefars1bj/entries?';
+  const ENDPOINT = config.contentful.endpoint;
   const queryParam = {
-    access_token: '9e9c6e46f1e52cfe1d30836842c1d98b131c9cb130902159f51b44bf6c41f09e',
+    access_token: config.contentful.access_token,
     content_type: contentType,
     select,
     locale,

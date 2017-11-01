@@ -26,3 +26,6 @@ yarn-error.log*
 
 # extrected default messages for Intl
 /src/lang/messages
+
+# private
+/src/private/index.js
