@@ -1,0 +1,611 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm should render and match the snapshot 1`] = `
+<Component>
+  <ContactForm
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": Object {},
+        "now": [Function],
+        "textComponent": "span",
+      }
+    }
+  >
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <form
+        className="sc-VigVT aeRQa"
+        onSubmit={[Function]}
+      >
+        <div>
+          <div>
+            <FormInfo>
+              <styled.div>
+                <div
+                  className="sc-bdVaJa dvWVfn"
+                >
+                  <styled.ul>
+                    <ul
+                      className="sc-bwzfXH eHurHK"
+                    >
+                      <li>
+                        <FontAwesome
+                          name="info-circle"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-info-circle"
+                          />
+                        </FontAwesome>
+                         
+                        <span>
+                          <FormattedMessage
+                            defaultMessage="Please fill in all fields"
+                            id="portfolio.page.contact.requirement.one"
+                          >
+                            <IntlProvider
+                              defaultLocale="en"
+                              locale="en"
+                            >
+                              <FormattedMessage
+                                defaultMessage="Please fill in all fields"
+                                id="portfolio.page.contact.requirement.one"
+                                values={Object {}}
+                              >
+                                <span>
+                                  Please fill in all fields
+                                </span>
+                              </FormattedMessage>
+                            </IntlProvider>
+                          </FormattedMessage>
+                        </span>
+                      </li>
+                    </ul>
+                  </styled.ul>
+                </div>
+              </styled.div>
+            </FormInfo>
+            <div>
+              <FormInput
+                helperText="Please provide a subject for your message."
+                inputType="text"
+                isTextArea={false}
+                label="Subject"
+                maxLength={50}
+                minLength={3}
+                name="subject"
+                onChange={[Function]}
+                validate={[Function]}
+                value=""
+              >
+                <styled.div>
+                  <div
+                    className="sc-htpNat cdCmwn"
+                  >
+                    <styled.label
+                      htmlFor="name"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="sc-bZQynM fyzOqO"
+                        htmlFor="name"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          hasFocus=""
+                        >
+                          <span
+                            className="sc-htoDjs iyMcMx"
+                          >
+                            Subject
+                            <styled.span
+                              hasFocus=""
+                            >
+                              <span
+                                className="sc-gzVnrw jDpwPe"
+                              >
+                                <i />
+                              </span>
+                            </styled.span>
+                          </span>
+                        </styled.span>
+                      </label>
+                    </styled.label>
+                    <styled.input
+                      innerRef={[Function]}
+                      name="subject"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="text"
+                      value=""
+                    >
+                      <input
+                        className="sc-bxivhb jqrJDT"
+                        name="subject"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="text"
+                        value=""
+                      />
+                    </styled.input>
+                    <div>
+                      <styled.span
+                        showError={false}
+                      >
+                        <span
+                          className="sc-dnqmqq cYQxgH"
+                        >
+                          false 
+                        </span>
+                      </styled.span>
+                      <styled.span>
+                        <span
+                          className="sc-iwsKbI bRezmp"
+                        >
+                          <span>
+                            Please provide a subject for your message.
+                             
+                            <FormattedMessage
+                              defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                              id="portfolio.page.contact.form_input.helper_text.range"
+                              values={
+                                Object {
+                                  "count": 0,
+                                  "maxLength": 50,
+                                  "minLength": 3,
+                                }
+                              }
+                            >
+                              <IntlProvider
+                                defaultLocale="en"
+                                locale="en"
+                              >
+                                <FormattedMessage
+                                  defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                                  id="portfolio.page.contact.form_input.helper_text.range"
+                                  values={
+                                    Object {
+                                      "count": 0,
+                                      "maxLength": 50,
+                                      "minLength": 3,
+                                    }
+                                  }
+                                >
+                                  <span>
+                                    Should be between 3 and 50 characters. Is now: 0
+                                  </span>
+                                </FormattedMessage>
+                              </IntlProvider>
+                            </FormattedMessage>
+                          </span>
+                        </span>
+                      </styled.span>
+                    </div>
+                  </div>
+                </styled.div>
+              </FormInput>
+              <FormInput
+                helperText="Please add your message here."
+                inputType="text"
+                isTextArea={true}
+                label="Your message"
+                maxLength={300}
+                minLength={5}
+                name="message"
+                onChange={[Function]}
+                validate={[Function]}
+                value=""
+              >
+                <styled.div>
+                  <div
+                    className="sc-htpNat cdCmwn"
+                  >
+                    <styled.label
+                      htmlFor="name"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="sc-bZQynM fyzOqO"
+                        htmlFor="name"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          hasFocus=""
+                        >
+                          <span
+                            className="sc-htoDjs iyMcMx"
+                          >
+                            Your message
+                            <styled.span
+                              hasFocus=""
+                            >
+                              <span
+                                className="sc-gzVnrw jDpwPe"
+                              >
+                                <i />
+                              </span>
+                            </styled.span>
+                          </span>
+                        </styled.span>
+                      </label>
+                    </styled.label>
+                    <styled.textarea
+                      innerRef={[Function]}
+                      name="message"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "height": "",
+                        }
+                      }
+                      value=""
+                    >
+                      <textarea
+                        className="sc-EHOje dBDhYl"
+                        name="message"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        style={
+                          Object {
+                            "height": "",
+                          }
+                        }
+                        value=""
+                      />
+                    </styled.textarea>
+                    <div>
+                      <styled.span
+                        showError={false}
+                      >
+                        <span
+                          className="sc-dnqmqq cYQxgH"
+                        >
+                          false 
+                        </span>
+                      </styled.span>
+                      <styled.span>
+                        <span
+                          className="sc-iwsKbI bRezmp"
+                        >
+                          <span>
+                            Please add your message here.
+                             
+                            <FormattedMessage
+                              defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                              id="portfolio.page.contact.form_input.helper_text.range"
+                              values={
+                                Object {
+                                  "count": 0,
+                                  "maxLength": 300,
+                                  "minLength": 5,
+                                }
+                              }
+                            >
+                              <IntlProvider
+                                defaultLocale="en"
+                                locale="en"
+                              >
+                                <FormattedMessage
+                                  defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                                  id="portfolio.page.contact.form_input.helper_text.range"
+                                  values={
+                                    Object {
+                                      "count": 0,
+                                      "maxLength": 300,
+                                      "minLength": 5,
+                                    }
+                                  }
+                                >
+                                  <span>
+                                    Should be between 5 and 300 characters. Is now: 0
+                                  </span>
+                                </FormattedMessage>
+                              </IntlProvider>
+                            </FormattedMessage>
+                          </span>
+                        </span>
+                      </styled.span>
+                    </div>
+                  </div>
+                </styled.div>
+              </FormInput>
+              <FormInput
+                helperText="Please add your name here."
+                inputType="text"
+                isTextArea={false}
+                label="Your name"
+                maxLength={50}
+                minLength={2}
+                name="name"
+                onChange={[Function]}
+                placeholder="(e.g. John Doo)"
+                validate={[Function]}
+                value=""
+              >
+                <styled.div>
+                  <div
+                    className="sc-htpNat cdCmwn"
+                  >
+                    <styled.label
+                      htmlFor="name"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="sc-bZQynM fyzOqO"
+                        htmlFor="name"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          hasFocus=""
+                        >
+                          <span
+                            className="sc-htoDjs iyMcMx"
+                          >
+                            Your name
+                            <styled.span
+                              hasFocus=""
+                            >
+                              <span
+                                className="sc-gzVnrw jDpwPe"
+                              >
+                                <i>
+                                  (e.g. John Doo)
+                                </i>
+                              </span>
+                            </styled.span>
+                          </span>
+                        </styled.span>
+                      </label>
+                    </styled.label>
+                    <styled.input
+                      innerRef={[Function]}
+                      name="name"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="text"
+                      value=""
+                    >
+                      <input
+                        className="sc-bxivhb jqrJDT"
+                        name="name"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="text"
+                        value=""
+                      />
+                    </styled.input>
+                    <div>
+                      <styled.span
+                        showError={false}
+                      >
+                        <span
+                          className="sc-dnqmqq cYQxgH"
+                        >
+                          false 
+                        </span>
+                      </styled.span>
+                      <styled.span>
+                        <span
+                          className="sc-iwsKbI bRezmp"
+                        >
+                          <span>
+                            Please add your name here.
+                             
+                            <FormattedMessage
+                              defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                              id="portfolio.page.contact.form_input.helper_text.range"
+                              values={
+                                Object {
+                                  "count": 0,
+                                  "maxLength": 50,
+                                  "minLength": 2,
+                                }
+                              }
+                            >
+                              <IntlProvider
+                                defaultLocale="en"
+                                locale="en"
+                              >
+                                <FormattedMessage
+                                  defaultMessage="Should be between {minLength, number} and {maxLength, number} characters. Is now: {count, number}"
+                                  id="portfolio.page.contact.form_input.helper_text.range"
+                                  values={
+                                    Object {
+                                      "count": 0,
+                                      "maxLength": 50,
+                                      "minLength": 2,
+                                    }
+                                  }
+                                >
+                                  <span>
+                                    Should be between 2 and 50 characters. Is now: 0
+                                  </span>
+                                </FormattedMessage>
+                              </IntlProvider>
+                            </FormattedMessage>
+                          </span>
+                        </span>
+                      </styled.span>
+                    </div>
+                  </div>
+                </styled.div>
+              </FormInput>
+              <FormInput
+                helperText="Please add your email address here."
+                inputType="email"
+                isTextArea={false}
+                label="Your email address"
+                name="email"
+                onChange={[Function]}
+                placeholder="(e.g. my@email.com)"
+                validate={[Function]}
+                value=""
+              >
+                <styled.div>
+                  <div
+                    className="sc-htpNat cdCmwn"
+                  >
+                    <styled.label
+                      htmlFor="name"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="sc-bZQynM fyzOqO"
+                        htmlFor="name"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          hasFocus=""
+                        >
+                          <span
+                            className="sc-htoDjs iyMcMx"
+                          >
+                            Your email address
+                            <styled.span
+                              hasFocus=""
+                            >
+                              <span
+                                className="sc-gzVnrw jDpwPe"
+                              >
+                                <i>
+                                  (e.g. my@email.com)
+                                </i>
+                              </span>
+                            </styled.span>
+                          </span>
+                        </styled.span>
+                      </label>
+                    </styled.label>
+                    <styled.input
+                      innerRef={[Function]}
+                      name="email"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="email"
+                      value=""
+                    >
+                      <input
+                        className="sc-bxivhb jqrJDT"
+                        name="email"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="email"
+                        value=""
+                      />
+                    </styled.input>
+                    <div>
+                      <styled.span
+                        showError={false}
+                      >
+                        <span
+                          className="sc-dnqmqq cYQxgH"
+                        >
+                          false 
+                        </span>
+                      </styled.span>
+                      <styled.span>
+                        <span
+                          className="sc-iwsKbI bRezmp"
+                        >
+                          <span>
+                            Please add your email address here.
+                             
+                          </span>
+                        </span>
+                      </styled.span>
+                    </div>
+                  </div>
+                </styled.div>
+              </FormInput>
+            </div>
+            <styled.div>
+              <div
+                className="sc-jTzLTM cpVoso"
+              >
+                <SendButton
+                  buttonState="idle"
+                  disabled={true}
+                >
+                  <styled.button
+                    disabled={true}
+                  >
+                    <button
+                      className="sc-gZMcBi feqOeo"
+                      disabled={true}
+                    >
+                      <span>
+                        <Styled(FontAwesome)
+                          name="paper-plane"
+                        >
+                          <FontAwesome
+                            className="sc-gqjmRU fOMCdq"
+                            name="paper-plane"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="fa fa-paper-plane sc-gqjmRU fOMCdq"
+                            />
+                          </FontAwesome>
+                        </Styled(FontAwesome)>
+                        <span>
+                          <FormattedMessage
+                            defaultMessage="Send"
+                            id="send_button.idle"
+                          >
+                            <IntlProvider
+                              defaultLocale="en"
+                              locale="en"
+                            >
+                              <FormattedMessage
+                                defaultMessage="Send"
+                                id="send_button.idle"
+                                values={Object {}}
+                              >
+                                <span>
+                                  Send
+                                </span>
+                              </FormattedMessage>
+                            </IntlProvider>
+                          </FormattedMessage>
+                        </span>
+                      </span>
+                    </button>
+                  </styled.button>
+                </SendButton>
+              </div>
+            </styled.div>
+          </div>
+        </div>
+      </form>
+    </styled.form>
+  </ContactForm>
+</Component>
+`;
